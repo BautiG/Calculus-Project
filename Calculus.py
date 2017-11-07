@@ -4,7 +4,7 @@ Interval2 = int(input("And where does it end?"))
 Accuracy = input("How accurate do you want the graph to be?")
 
 Function = x^2 +3
-for t in Function:
+for t in range(Interval1, Interval2):
     
 
 print(Function)
