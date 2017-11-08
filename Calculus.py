@@ -24,5 +24,3 @@ def funcTion():
     print (eval(yFunctionNew))
 
 funcTion()
-
-#print(Function)
