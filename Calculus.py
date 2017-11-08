@@ -1,10 +1,11 @@
 import math
 #make sure that if you need to do trig do "math.()"
 yFunction = str(input("y="))
-xValue = int(input("Where does your interval start? "))
+reSet = int(input("Where does your interval start? "))
 xValue2 = int(input("And where does it end? "))
 #Accuracy = input("How accurate do you want the graph to be?")
 
+xValue=reSet
 def funcTion():
     yFunctionNew = ""
     
@@ -22,15 +23,16 @@ def funcTion():
 for i in range(xValue, xValue2+1):
     funcTion()
     xValue+=1
-"""
+
+xValue=reSet
 smallest=1000
 biggest=-1000
-for i in range(xValue, xValue):
+for i in range(xValue, xValue2+1):
     if xValue>=biggest:
         biggest=xValue
     if xValue<=smallest:
         smallest=xValue
     xValue+=1
-print("Absolute Max: {0}".format(biggest))
-print("Absolute Min: {0}".format(smallest))
-"""
+
+print("Absolute Max at: x={0}".format(biggest))
+print("Absolute Min at: x={0}".format(smallest))
