@@ -36,16 +36,15 @@ for i in range(xValue, xValue2+1):
     else:
         biggest=biggest
     xValue+=1
-"""
+
+xValue=reSet
 for i in range(xValue, xValue2+1):
-    if eval(yFunctionNew)<=smallest:
-        smallest=xValue
+    funcTion()
+    if int(eval(yFunctionNew))<smallest:
+        smallest=int(eval(yFunctionNew))
     else:
         smallest=smallest
-    Value+=1
-"""    
+    xValue+=1
 
 print("Absolute Max at: y={0}".format(biggest))
-"""
 print("Absolute Min at: y={0}".format(smallest))
-"""
