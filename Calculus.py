@@ -31,4 +31,5 @@ for i in range(xValue, xValue):
     if xValue<=smallest:
         smallest=xValue
     xValue+=1
-print("Absolute Min: "+{0})(smallest)
+print("Absolute Max: {0}".format(biggest))
+print("Absolute Min: {0}".format(smallest))
