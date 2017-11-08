@@ -19,10 +19,10 @@ def funcTion():
     #print (yFunctionNew)
     print (eval(yFunctionNew))
     
-for i in range(xValue, xValue2):
+for i in range(xValue, xValue2+1):
     funcTion()
     xValue+=1
-
+"""
 smallest=1000
 biggest=-1000
 for i in range(xValue, xValue):
@@ -33,3 +33,4 @@ for i in range(xValue, xValue):
     xValue+=1
 print("Absolute Max: {0}".format(biggest))
 print("Absolute Min: {0}".format(smallest))
+"""
