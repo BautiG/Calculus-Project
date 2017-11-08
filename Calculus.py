@@ -1,5 +1,6 @@
 import math
-#make sure that if you need to do trig do "math.()"
+#make sure that if you need to do trig or logs do "math.()"
+#use paranthesis when pluging in an exponent
 yFunction = str(input("y="))
 reSet = int(input("Where does your interval start? "))
 xValue2 = int(input("And where does it end? "))
@@ -14,7 +15,6 @@ def funcTion():
             yFunctionNew += str(xValue)
         else:
             yFunctionNew += yFunction[i]
-
     i += 1
 
     #print (yFunctionNew)
@@ -28,11 +28,22 @@ xValue=reSet
 smallest=1000
 biggest=-1000
 for i in range(xValue, xValue2+1):
-    if xValue>=biggest:
+    if eval(yFunctionNew)>=biggest:
         biggest=xValue
-    if xValue<=smallest:
-        smallest=xValue
+    else:
+        biggest=biggest
     xValue+=1
+xValue=reSet
+"""
+for i in range(xValue, xValue2+1):
+    if eval(yFunctionNew)<=smallest:
+        smallest=xValue
+    else:
+        smallest=smallest
+    Value+=1
+"""    
 
 print("Absolute Max at: x={0}".format(biggest))
+"""
 print("Absolute Min at: x={0}".format(smallest))
+"""
