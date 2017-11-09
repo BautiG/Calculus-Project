@@ -67,4 +67,20 @@ def nDer():
     print(yFunctionNewDer)
     positivePoint=eval(yFunctionNewDer)
     print(positivePoint)
+    
+    yFunctionNewDer2 = ""
+    
+    for i in range(len(yFunction)):
+        if yFunction[i] == "x":
+            yFunctionNewDer2 += str(xValue-.001)
+        else:
+            yFunctionNewDer2 += yFunction[i]
+    i += 1
+    
+    print(yFunctionNewDer2)
+    negativePoint=eval(yFunctionNewDer2)
+    print(negativePoint)
+    
+    derSlope=(positivePoint-negativePoint)/.002
+    print(derSlope)
 nDer()
