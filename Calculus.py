@@ -21,11 +21,11 @@ def funcTion():
     yFunctionNew=eval(yFunctionNew)
     #print (yFunctionNew)
     #print (eval(yFunctionNew))
-"""
+
 for i in range(xValue, xValue2+1):
     funcTion()
     xValue+=1
-
+"""
 maxXvalue = 0  #this just establishes a veriable
 xValue=reSet
 smallest=1000
@@ -79,4 +79,9 @@ def nDer():
     
     derSlope=(positivePoint-negativePoint)/.002
     print(derSlope)
-nDer()
+
+for i in range(xValue, xValue2+1):
+    nDer()
+    xValue+=1
+
+
