@@ -26,25 +26,29 @@ for i in range(xValue, xValue2+1):
     funcTion()
     xValue+=1
 
+maxXvalue = 0  #this just establishes a veriable
 xValue=reSet
 smallest=1000
 biggest=-1000
 for i in range(xValue, xValue2+1):
     funcTion()
-    if int(eval(yFunctionNew))>biggest:
+    if int(eval(yFunctionNew))>=biggest:
         biggest=int(eval(yFunctionNew))
+        maxXvalue = xValue  #this step makes that variable equal to the xvalue of the surent highest point
     else:
         biggest=biggest
     xValue+=1
 
+minXvalue = 0
 xValue=reSet
 for i in range(xValue, xValue2+1):
     funcTion()
-    if int(eval(yFunctionNew))<smallest:
+    if int(eval(yFunctionNew))<=smallest:
         smallest=int(eval(yFunctionNew))
+        minXvalue = xValue
     else:
         smallest=smallest
     xValue+=1
 
-print("Absolute Max at: y={0}".format(biggest))
-print("Absolute Min at: y={0}".format(smallest))
+print("Absolute Max at: y= " + str(maxXvalue) + "," + str(biggest)) 
+print("Absolute Min at: y= " + str(minXvalue) + "," + str(smallest))
