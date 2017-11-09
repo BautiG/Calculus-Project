@@ -21,7 +21,7 @@ def funcTion():
     yFunctionNew=eval(yFunctionNew)
     #print (yFunctionNew)
     #print (eval(yFunctionNew))
-    
+"""
 for i in range(xValue, xValue2+1):
     funcTion()
     xValue+=1
@@ -52,3 +52,19 @@ for i in range(xValue, xValue2+1):
 
 print("Absolute Max at: y= " + str(maxXvalue) + "," + str(biggest)) 
 print("Absolute Min at: y= " + str(minXvalue) + "," + str(smallest))
+"""
+xValue=reSet
+def nDer():
+    yFunctionNewDer = ""
+    
+    for i in range(len(yFunction)):
+        if yFunction[i] == "x":
+            yFunctionNewDer += str(xValue+.001)
+        else:
+            yFunctionNewDer += yFunction[i]
+    i += 1
+    
+    print(yFunctionNewDer)
+    positivePoint=eval(yFunctionNewDer)
+    print(positivePoint)
+nDer()
