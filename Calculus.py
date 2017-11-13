@@ -18,7 +18,8 @@ def funcTion():
     i += 1
     
     yFunctionNew=eval(yFunctionNew)
-    print(yFunctionNew)
+    #print(xValue)
+    #print(yFunctionNew)
 
 if xValue<0 and xValue2>0:
     for i in range(0, (abs(xValue)*accuracy+abs((xValue2)*accuracy)+1)):
