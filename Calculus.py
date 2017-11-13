@@ -7,7 +7,6 @@ xValue2 = int(input("And where does it end? "))
 accuracy = int(input("Between integers, how many times should the program check for slope? "))
 
 xValue=reSet
-
 def funcTion():
     yFunctionNew = ""
     
@@ -19,7 +18,8 @@ def funcTion():
     i += 1
     
     yFunctionNew=eval(yFunctionNew)
-    print (yFunctionNew)
+    print(yFunctionNew)
+
 if xValue<0 and xValue2>0:
     for i in range(0, (abs(xValue)*accuracy+abs((xValue2)*accuracy)+1)):
             funcTion()
