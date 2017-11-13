@@ -46,8 +46,8 @@ if xValue<0 and xValue2>0:
 else:
     for i in range(xValue*accuracy, ((xValue2)*accuracy)+1):
         funcTion()
-        if int(eval(yFunctionNew))>=biggest:
-            biggest=int(eval(yFunctionNew))
+        if eval(yFunctionNew)>=biggest:
+            biggest=eval(yFunctionNew)
             maxXvalue = xValue  #this step makes that variable equal to the xvalue of the surent highest point
         else:
             biggest=biggest
@@ -58,22 +58,22 @@ xValue=reSet
 if xValue<0 and xValue2>0:
     for i in range(0, (abs(xValue)*accuracy+abs((xValue2)*accuracy)+1)):
         funcTion()
-        if int(eval(yFunctionNew))<=smallest:
-            smallest=int(eval(yFunctionNew))
-            minXvalue = xValue
+        if eval(yFunctionNew)<=smallest:
+            smallest=eval(yFunctionNew)
+            minXvalue = xValue  #this step makes that variable equal to the xvalue of the surent highest point
         else:
             smallest=smallest
-            xValue=xValue
         xValue+=(1/accuracy)
 else:
     for i in range(xValue*accuracy, ((xValue2)*accuracy)+1):
         funcTion()
         if int(eval(yFunctionNew))<=smallest:
             smallest=int(eval(yFunctionNew))
-            minXvalue = xValue
+            minXvalue = xValue  #this step makes that variable equal to the xvalue of the surent highest point
         else:
             smallest=smallest
         xValue+=(1/accuracy)
+
 
 print("Absolute Max at: y= (" + str(maxXvalue) + "," + str(biggest)+")")
 print("Absolute Min at: y= (" + str(minXvalue) + "," + str(smallest)+")")
@@ -138,9 +138,9 @@ for i in range(xValue, xValue2+1):
 for i in range(xValue, xValue2+1):
     nDer()
     nDer2()
-    if derSlope>0 and derSlope2<0:
+    if eval(derSlope)>0 and eval(derSlope2)<0:
         print("max")
-    if derSlope<0 and derSlope2>0:
+    if eval(derSlope)<0 and eval(derSlope2)>0:
         print("min")
     else:
         print("what the herrrr")
