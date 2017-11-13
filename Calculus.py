@@ -77,7 +77,7 @@ else:
 #this actualy works now so don't try to fix it!!!
 print("Absolute Max at: y= (" + str(maxXvalue) + "," + str(biggest)+")")
 print("Absolute Min at: y= (" + str(minXvalue) + "," + str(smallest)+")")
-"""
+
 xValue=reSet
 def nDer():
     yFunctionNewDer = ""
@@ -131,9 +131,14 @@ def nDer2():
     derSlope2=(positivePoint2-negativePoint2)/.002
     #print(derSlope2)
 
-for i in range(xValue, xValue2+1):
-    nDer()
-    xValue+=(1/accuracy)
+if xValue<0 and xValue2>0:
+    for i in range(0, (abs(xValue)*accuracy+abs((xValue2)*accuracy)+1)):
+        nDer()
+        xValue+=(1/accuracy)
+else:
+    for i in range(xValue*accuracy, ((xValue2)*accuracy)+1):
+        nDer()
+        xValue+=(1/accuracy)
 
 for i in range(xValue, xValue2+1):
     nDer()
