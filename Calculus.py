@@ -20,16 +20,20 @@ def funcTion():
     
     yFunctionNew=eval(yFunctionNew)
     print (yFunctionNew)
-
-for i in range(xValue*accuracy, ((xValue2)*accuracy)+1):
-    funcTion()
-    xValue+=(1/accuracy)
+if xValue<0 and xValue2>0:
+    for i in range(0, (abs(xValue)*accuracy+abs((xValue2)*accuracy)+1)):
+            funcTion()
+            xValue+=(1/accuracy)
+    else:
+        for i in range(xValue*accuracy, ((xValue2)*accuracy)+1):
+            funcTion()
+            xValue+=(1/accuracy)
 """
 maxXvalue = 0  #this just establishes a veriable
 xValue=reSet
 smallest=1000
 biggest=-1000
-for i in range(xValue, xValue2+1):
+for i in range(0, (abs(xValue)*accuracy+abs((xValue2)*accuracy)+1)):
     funcTion()
     if int(eval(yFunctionNew))>=biggest:
         biggest=int(eval(yFunctionNew))
@@ -40,7 +44,7 @@ for i in range(xValue, xValue2+1):
 
 minXvalue = 0
 xValue=reSet
-for i in range(xValue, xValue2+1):
+for i in range(0, (abs(xValue)*accuracy+abs((xValue2)*accuracy)+1)):
     funcTion()
     if int(eval(yFunctionNew))<=smallest:
         smallest=int(eval(yFunctionNew))
@@ -49,9 +53,9 @@ for i in range(xValue, xValue2+1):
         smallest=smallest
     xValue+=(1/accuracy)
 
-print("Absolute Max at: y= " + str(maxXvalue) + "," + str(biggest)) 
-print("Absolute Min at: y= " + str(minXvalue) + "," + str(smallest))
-"""
+print("Absolute Max at: y= (" + str(maxXvalue) + "," + str(biggest)+")") 
+print("Absolute Min at: y= (" + str(minXvalue) + "," + str(smallest)+")")
+
 xValue=reSet
 def nDer():
     yFunctionNewDer = ""
@@ -104,9 +108,7 @@ def nDer2():
     
     derSlope2=(positivePoint2-negativePoint2)/.002
     #print(derSlope2)
-    
 
-"""
 for i in range(xValue, xValue2+1):
     nDer()
     xValue+=(1/accuracy)
