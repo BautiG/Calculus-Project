@@ -24,10 +24,10 @@ if xValue<0 and xValue2>0:
     for i in range(0, (abs(xValue)*accuracy+abs((xValue2)*accuracy)+1)):
             funcTion()
             xValue+=(1/accuracy)
-    else:
-        for i in range(xValue*accuracy, ((xValue2)*accuracy)+1):
-            funcTion()
-            xValue+=(1/accuracy)
+else:
+    for i in range(xValue*accuracy, ((xValue2)*accuracy)+1):
+        funcTion()
+        xValue+=(1/accuracy)
 """
 maxXvalue = 0  #this just establishes a veriable
 xValue=reSet
