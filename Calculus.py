@@ -140,14 +140,25 @@ else:
         nDer()
         xValue+=(1/accuracy)
 
-for i in range(xValue, xValue2+1):
-    nDer()
-    nDer2()
-    if eval(derSlope)>0 and eval(derSlope2)<0:
-        print("max")
-    if eval(derSlope)<0 and eval(derSlope2)>0:
-        print("min")
-    else:
-        print("what the herrrr")
-    xValue+=1
-
+if xValue<0 and xValue2>0:
+    for i in range(0, (abs(xValue)*accuracy+abs((xValue2)*accuracy)+1)):
+        nDer()
+        nDer2()
+        if eval(derSlope)>0 and eval(derSlope2)<0:
+            print("max")
+        if eval(derSlope)<0 and eval(derSlope2)>0:
+            print("min")
+        else:
+            print("what the herrrr")
+        xValue+=1
+else:
+    for i in range(xValue*accuracy, ((xValue2)*accuracy)+1):
+        nDer()
+        nDer2()
+        if eval(derSlope)>0 and eval(derSlope2)<0:
+            print("max")
+        if eval(derSlope)<0 and eval(derSlope2)>0:
+            print("min")
+        else:
+            print("what the herrrr")
+        xValue+=1
