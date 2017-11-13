@@ -74,7 +74,7 @@ else:
             smallest=smallest
         xValue+=(1/accuracy)
 
-
+#this actualy works now so don't try to fix it!!!
 print("Absolute Max at: y= (" + str(maxXvalue) + "," + str(biggest)+")")
 print("Absolute Min at: y= (" + str(minXvalue) + "," + str(smallest)+")")
 """
