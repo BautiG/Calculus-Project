@@ -170,7 +170,7 @@ def secondDer():
     
     for i in range(len(yFunction)):
         if yFunction[i] == "x":
-            yFunctionSecondDer += str(derSlope+.001)
+            yFunctionSecondDer += str(eval(derSlope)+.001)
         else:
             yFunctionSecondDer += yFunction[i]
     i += 1
@@ -181,7 +181,7 @@ def secondDer():
     
     for i in range(len(yFunction)):
         if yFunction[i] == "x":
-            yFunctionSecondDer2 += str(derSlope-.001)
+            yFunctionSecondDer2 += str(eval(derSlope)-.001)
         else:
             yFunctionSecondDer2 += yFunction[i]
     i += 1
@@ -198,4 +198,3 @@ else:
     for i in range(xValue*accuracy, ((xValue2)*accuracy)+1):
         secondDer()
         xValue+=(1/accuracy)
-    
