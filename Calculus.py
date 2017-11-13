@@ -22,40 +22,61 @@ def funcTion():
 
 if xValue<0 and xValue2>0:
     for i in range(0, (abs(xValue)*accuracy+abs((xValue2)*accuracy)+1)):
-            funcTion()
-            xValue+=(1/accuracy)
+        funcTion()
+        xValue+=(1/accuracy)
 else:
     for i in range(xValue*accuracy, ((xValue2)*accuracy)+1):
         funcTion()
         xValue+=(1/accuracy)
-"""
+
 maxXvalue = 0  #this just establishes a veriable
 xValue=reSet
 smallest=1000
 biggest=-1000
-for i in range(0, (abs(xValue)*accuracy+abs((xValue2)*accuracy)+1)):
-    funcTion()
-    if int(eval(yFunctionNew))>=biggest:
-        biggest=int(eval(yFunctionNew))
-        maxXvalue = xValue  #this step makes that variable equal to the xvalue of the surent highest point
-    else:
-        biggest=biggest
-    xValue+=(1/accuracy)
+if xValue<0 and xValue2>0:
+    for i in range(0, (abs(xValue)*accuracy+abs((xValue2)*accuracy)+1)):
+        funcTion()
+        if int(eval(yFunctionNew))>=biggest:
+            biggest=int(eval(yFunctionNew))
+            maxXvalue = xValue  #this step makes that variable equal to the xvalue of the surent highest point
+        else:
+            biggest=biggest
+        xValue+=(1/accuracy)
+else:
+    for i in range(xValue*accuracy, ((xValue2)*accuracy)+1):
+        funcTion()
+        if int(eval(yFunctionNew))>=biggest:
+            biggest=int(eval(yFunctionNew))
+            maxXvalue = xValue  #this step makes that variable equal to the xvalue of the surent highest point
+        else:
+            biggest=biggest
+        xValue+=(1/accuracy)
 
 minXvalue = 0
 xValue=reSet
-for i in range(0, (abs(xValue)*accuracy+abs((xValue2)*accuracy)+1)):
-    funcTion()
-    if int(eval(yFunctionNew))<=smallest:
-        smallest=int(eval(yFunctionNew))
-        minXvalue = xValue
-    else:
-        smallest=smallest
-    xValue+=(1/accuracy)
+if xValue<0 and xValue2>0:
+    for i in range(0, (abs(xValue)*accuracy+abs((xValue2)*accuracy)+1)):
+        funcTion()
+        if int(eval(yFunctionNew))<=smallest:
+            smallest=int(eval(yFunctionNew))
+            minXvalue = xValue
+        else:
+            smallest=smallest
+            xValue=xValue
+        xValue+=(1/accuracy)
+else:
+    for i in range(xValue*accuracy, ((xValue2)*accuracy)+1):
+        funcTion()
+        if int(eval(yFunctionNew))<=smallest:
+            smallest=int(eval(yFunctionNew))
+            minXvalue = xValue
+        else:
+            smallest=smallest
+        xValue+=(1/accuracy)
 
-print("Absolute Max at: y= (" + str(maxXvalue) + "," + str(biggest)+")") 
+print("Absolute Max at: y= (" + str(maxXvalue) + "," + str(biggest)+")")
 print("Absolute Min at: y= (" + str(minXvalue) + "," + str(smallest)+")")
-
+"""
 xValue=reSet
 def nDer():
     yFunctionNewDer = ""
