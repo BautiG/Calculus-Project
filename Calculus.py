@@ -139,7 +139,7 @@ else:
     for i in range(xValue*accuracy, ((xValue2)*accuracy)+1):
         nDer()
         xValue+=(1/accuracy)
-
+"""
 if xValue<0 and xValue2>0:
     for i in range(0, (abs(xValue)*accuracy+abs((xValue2)*accuracy)+1)):
         nDer()
@@ -162,3 +162,40 @@ else:
         else:
             print("what the herrrr")
         xValue+=1
+"""
+xValue=reSet
+def secondDer():
+    nDer()
+    yFunctionSecondDer = ""
+    
+    for i in range(len(yFunction)):
+        if yFunction[i] == "x":
+            yFunctionSecondDer += str(derSlope+.001)
+        else:
+            yFunctionSecondDer += yFunction[i]
+    i += 1
+    
+    secondPositivePoint=eval(yFunctionSecondDer)
+    
+    yFunctionSecondDer2 = ""
+    
+    for i in range(len(yFunction)):
+        if yFunction[i] == "x":
+            yFunctionSecondDer2 += str(derSlope-.001)
+        else:
+            yFunctionSecondDer2 += yFunction[i]
+    i += 1
+    
+    secondNegativePoint=eval(yFunctionSecondDer2)
+    
+    SecondDerSlope=(secondPositivePoint-secondNegativePoint)/.002
+    print(eval(SecondDerSlope))
+if xValue<0 and xValue2>0:
+    for i in range(0, (abs(xValue)*accuracy+abs((xValue2)*accuracy)+1)):
+        secondDer()
+        xValue+=(1/accuracy)
+else:
+    for i in range(xValue*accuracy, ((xValue2)*accuracy)+1):
+        secondDer()
+        xValue+=(1/accuracy)
+    
