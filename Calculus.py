@@ -191,9 +191,9 @@ else:
         if derSlope<0 and derSlope2>0:
             print("between x="+str(xValue)+" and x="+str(xValue+(1/accuracy))+" there is a relative min!")
         if derSlope3<0 and derSlope==0 and derSlope2>0:
-            print("there is a relative max at x="+str(derSlope))
-        if derSlope3>0 and derSlope==0 and derSlope2<0:
             print("there is a relative min at x="+str(derSlope))
+        if derSlope3>0 and derSlope==0 and derSlope2<0:
+            print("there is a relative max at x="+str(derSlope))
         xValue+=1
 """
 def secondDer():
