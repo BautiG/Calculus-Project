@@ -4,7 +4,7 @@ import math
 yFunction = str(input("y="))
 reSet = int(input("Where does your interval start? "))
 xValue2 = int(input("And where does it end? "))
-accuracy = int(input("Between integers, how many times should the program check for slope? "))
+accuracy = int(input("Between integers, how many times should the program check for slope? (The bigger the number the more accurate the second derivative is) "))
 
 xValue=reSet
 def funcTion():
@@ -197,31 +197,71 @@ else:
         xValue+=1
 
 def secondDer():
+    def nDer():
+        yFunctionNewDer = ""
+    
+        for i in range(len(yFunction)):
+            if yFunction[i] == "x":
+                yFunctionNewDer += str(xValue+.001)
+            else:
+                yFunctionNewDer += yFunction[i]
+        i += 1
+    
+        positivePoint=eval(yFunctionNewDer)
+    
+        yFunctionNewDer2 = ""
+    
+        for i in range(len(yFunction)):
+            if yFunction[i] == "x":
+                yFunctionNewDer2 += str(xValue-.001)
+            else:
+                yFunctionNewDer2 += yFunction[i]
+        i += 1
+    
+        negativePoint=eval(yFunctionNewDer2)
+        global derSlope
+        derSlope=(positivePoint-negativePoint)/.002
+        #print(derSlope)
+    def nDer2():
+        yFunctionNewDer3 = ""
+    
+        for i in range(len(yFunction)):
+            if yFunction[i] == "x":
+                yFunctionNewDer3 += str(xValue+1+.001)
+            else:
+                yFunctionNewDer3 += yFunction[i]
+        i += 1
+    
+        positivePoint2=eval(yFunctionNewDer3)
+    
+        yFunctionNewDer4 = ""
+    
+        for i in range(len(yFunction)):
+            if yFunction[i] == "x":
+                yFunctionNewDer4 += str(xValue+1-.001)
+            else:
+                yFunctionNewDer4 += yFunction[i]
+        i += 1
+    
+        negativePoint2=eval(yFunctionNewDer4)
+        global derSlope2
+        derSlope2=(positivePoint2-negativePoint2)/.002
+        #print(derSlope2)
     nDer()
-    yFunctionSecondDer = ""
-    
-    for i in range(len(yFunction)):
-        if yFunction[i] == "x":
-            yFunctionSecondDer += str(derSlope+.001)
-        else:
-            yFunctionSecondDer += yFunction[i]
-    i += 1
-    
-    secondPositivePoint=eval(yFunctionSecondDer)
-    
-    yFunctionSecondDer2 = ""
-    
-    for i in range(len(yFunction)):
-        if yFunction[i] == "x":
-            yFunctionSecondDer2 += str(derSlope-.001)
-        else:
-            yFunctionSecondDer2 += yFunction[i]
-    i += 1
-    
-    secondNegativePoint=eval(yFunctionSecondDer2)
-    
-    SecondDerSlope=(secondPositivePoint-secondNegativePoint)/.002
-    print(eval(SecondDerSlope))
+    nDer2()
+    if xValue<0 and xValue2>0:
+        for i in range(0, (abs(xValue)*accuracy+abs((xValue2)*accuracy)+1)):
+            nDer()
+            nDer2()
+            secondDerSlope=(derSlope2-derSlope)/((xValue+(1/accuracy))-xValue)
+    else:
+        for i in range(xValue*accuracy, ((xValue2)*accuracy)+1):
+            nDer()
+            nDer2()
+            secondDerSlope=(derSlope2-derSlope)/((xValue+(1/accuracy))-xValue)
+    secondDerSlope=secondDerSlope
+secondDer()
+"""
 xValue=reSet
 if xValue<0 and xValue2>0:
     for i in range(0, (abs(xValue)*accuracy+abs((xValue2)*accuracy)+1)):
@@ -231,3 +271,4 @@ else:
     for i in range(xValue*accuracy, ((xValue2)*accuracy)+1):
         secondDer()
         xValue+=(1/accuracy)
+"""
