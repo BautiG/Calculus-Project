@@ -78,7 +78,6 @@ else:
 print("Absolute Max at: y= (" + str(maxXvalue) + "," + str(biggest)+")")
 print("Absolute Min at: y= (" + str(minXvalue) + "," + str(smallest)+")")
 
-xValue=reSet
 def nDer():
     yFunctionNewDer = ""
     
@@ -103,6 +102,7 @@ def nDer():
     negativePoint=eval(yFunctionNewDer2)
     
     derSlope=(positivePoint-negativePoint)/.002
+    global derSlope
     #print(derSlope)
 
 def nDer2():
@@ -127,43 +127,44 @@ def nDer2():
     i += 1
     
     negativePoint2=eval(yFunctionNewDer4)
-    
+
     derSlope2=(positivePoint2-negativePoint2)/.002
+    global derSlope2
     #print(derSlope2)
 
-if xValue<0 and xValue2>0:
-    for i in range(0, (abs(xValue)*accuracy+abs((xValue2)*accuracy)+1)):
-        nDer()
-        xValue+=(1/accuracy)
-else:
-    for i in range(xValue*accuracy, ((xValue2)*accuracy)+1):
-        nDer()
-        xValue+=(1/accuracy)
-"""
-if xValue<0 and xValue2>0:
-    for i in range(0, (abs(xValue)*accuracy+abs((xValue2)*accuracy)+1)):
-        nDer()
-        nDer2()
-        if eval(derSlope)>0 and eval(derSlope2)<0:
-            print("max")
-        if eval(derSlope)<0 and eval(derSlope2)>0:
-            print("min")
-        else:
-            print("what the herrrr")
-        xValue+=1
-else:
-    for i in range(xValue*accuracy, ((xValue2)*accuracy)+1):
-        nDer()
-        nDer2()
-        if eval(derSlope)>0 and eval(derSlope2)<0:
-            print("max")
-        if eval(derSlope)<0 and eval(derSlope2)>0:
-            print("min")
-        else:
-            print("what the herrrr")
-        xValue+=1
-"""
 xValue=reSet
+if xValue<0 and xValue2>0:
+    for i in range(0, (abs(xValue)*accuracy+abs((xValue2)*accuracy)+1)):
+        nDer()
+        xValue+=(1/accuracy)
+else:
+    for i in range(xValue*accuracy, ((xValue2)*accuracy)+1):
+        nDer()
+        xValue+=(1/accuracy)
+"""
+if xValue<0 and xValue2>0:
+    for i in range(0, (abs(xValue)*accuracy+abs((xValue2)*accuracy)+1)):
+        nDer()
+        nDer2()
+        if eval(derSlope)>0 and eval(derSlope2)<0:
+            print("max")
+        if eval(derSlope)<0 and eval(derSlope2)>0:
+            print("min")
+        else:
+            print("what the herrrr")
+        xValue+=1
+else:
+    for i in range(xValue*accuracy, ((xValue2)*accuracy)+1):
+        nDer()
+        nDer2()
+        if eval(derSlope)>0 and eval(derSlope2)<0:
+            print("max")
+        if eval(derSlope)<0 and eval(derSlope2)>0:
+            print("min")
+        else:
+            print("what the herrrr")
+        xValue+=1
+"""
 def secondDer():
     nDer()
     yFunctionSecondDer = ""
@@ -190,6 +191,7 @@ def secondDer():
     
     SecondDerSlope=(secondPositivePoint-secondNegativePoint)/.002
     print(eval(SecondDerSlope))
+xValue=reSet
 if xValue<0 and xValue2>0:
     for i in range(0, (abs(xValue)*accuracy+abs((xValue2)*accuracy)+1)):
         secondDer()
