@@ -146,7 +146,7 @@ if xValue<0 and xValue2>0:
         nDer()
         nDer2()
         if derSlope>=0 and derSlope2<=0:
-            print("max")
+            print("between "+str(xValue)+" and "+str(xValue+1)+" there is a relative max!")
         if derSlope<=0 and derSlope2>=0:
             print("between "+str(xValue)+" and "+str(xValue+1)+" there is a relative min!")
         xValue+=1
