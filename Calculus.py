@@ -129,6 +129,32 @@ def nDer2():
     global derSlope2
     derSlope2=(positivePoint2-negativePoint2)/.002
     #print(derSlope2)
+def nDer3():
+    yFunctionNewDer5 = ""
+    
+    for i in range(len(yFunction)):
+        if yFunction[i] == "x":
+            yFunctionNewDer5 += str(xValue-1+.001)
+        else:
+            yFunctionNewDer5 += yFunction[i]
+    i += 1
+    
+    positivePoint3=eval(yFunctionNewDer5)
+    
+    yFunctionNewDer6 = ""
+    
+    for i in range(len(yFunction)):
+        if yFunction[i] == "x":
+            yFunctionNewDer6 += str(xValue-1-.001)
+        else:
+            yFunctionNewDer6 += yFunction[i]
+    i += 1
+    
+    negativePoint3=eval(yFunctionNewDer6)
+    
+    global derSlope3
+    derSlope3=(positivePoint3-negativePoint3)/.002
+    #print(derSlope2)
 
 xValue=reSet
 if xValue<0 and xValue2>0:
@@ -145,6 +171,7 @@ if xValue<0 and xValue2>0:
     for i in range(0, (abs(xValue)*accuracy+abs((xValue2)*accuracy)+1)):
         nDer()
         nDer2()
+        nDer3()
         if derSlope>=0 and derSlope2<=0:
             print("between x="+str(xValue-(1/accuracy))+" and x="+str(xValue+(1/accuracy))+" there is a relative max!")
         if derSlope<=0 and derSlope2>=0:
@@ -154,10 +181,15 @@ else:
     for i in range(xValue*accuracy, ((xValue2)*accuracy)+1):
         nDer()
         nDer2()
+        nDer3()
         if derSlope>0 and derSlope2<0:
             print("between x="+str(xValue)+" and x="+str(xValue+(1/accuracy))+" there is a relative max!")
         if derSlope<0 and derSlope2>0:
             print("between x="+str(xValue)+" and x="+str(xValue+(1/accuracy))+" there is a relative min!")
+        if derSlope3<0 and derSlope==0 and derSlope2>0:
+            print("there is a relative max at x="+str(derSlope))
+        if derSlope3>0 and derSlope==0 and derSlope2<0:
+            print("there is a relative min at x="+str(derSlope))
         xValue+=1
 """
 def secondDer():
