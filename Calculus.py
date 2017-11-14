@@ -145,7 +145,7 @@ if xValue<0 and xValue2>0:
     for i in range(0, (abs(xValue)*accuracy+abs((xValue2)*accuracy)+1)):
         nDer()
         nDer2()
-        if derSlope>0 and derSlope2<0:
+        if derSlope>=0 and derSlope2<=0:
             print("between x="+str(xValue-(1/accuracy))+" and x="+str(xValue+(1/accuracy))+" there is a relative max!")
         if derSlope<=0 and derSlope2>=0:
             print("between x="+str(xValue-(1/accuracy))+" and x="+str(xValue+(1/accuracy))+" there is a relative min!")
