@@ -67,8 +67,8 @@ if xValue<0 and xValue2>0:
 else:
     for i in range(xValue*accuracy, ((xValue2)*accuracy)+1):
         funcTion()
-        if int(eval(yFunctionNew))<=smallest:
-            smallest=int(eval(yFunctionNew))
+        if eval(yFunctionNew)<=smallest:
+            smallest=eval(yFunctionNew)
             minXvalue = xValue  #this step makes that variable equal to the xvalue of the surent highest point
         else:
             smallest=smallest
@@ -150,20 +150,16 @@ if xValue<0 and xValue2>0:
         if derSlope<=0 and derSlope2>=0:
             print("between "+str(xValue)+" and "+str(xValue+1)+" there is a relative min!")
         xValue+=1
-
-"""
 else:
     for i in range(xValue*accuracy, ((xValue2)*accuracy)+1):
         nDer()
         nDer2()
-        if eval(derSlope)>0 and eval(derSlope2)<0:
-            print("max")
-        if eval(derSlope)<0 and eval(derSlope2)>0:
-            print("min")
-        else:
-            print("what the herrrr")
+        if derSlope>0 and derSlope2<0:
+            print("between "+str(xValue)+" and "+str(xValue+1)+" there is a relative max!")
+        if derSlope<0 and derSlope2>0:
+            print("between "+str(xValue)+" and "+str(xValue+1)+" there is a relative min!")
         xValue+=1
-
+"""
 def secondDer():
     nDer()
     yFunctionSecondDer = ""
