@@ -174,9 +174,9 @@ if xValue<0 and xValue2>0:
         nDer()
         nDer2()
         nDer3()
-        if derSlope>=0 and derSlope2<=0:
+        if derSlope>0 and derSlope2<0:
             print("between x="+str(xValue-(1/accuracy))+" and x="+str(xValue+(1/accuracy))+" there is a relative max!")
-        if derSlope<=0 and derSlope2>=0:
+        if derSlope<0 and derSlope2>0:
             print("between x="+str(xValue-(1/accuracy))+" and x="+str(xValue+(1/accuracy))+" there is a relative min!")
         if derSlope3<0 and derSlope==0 and derSlope2>0:
             print("there is a relative min at x="+str(derSlope))
@@ -202,8 +202,8 @@ def secondDer():
     funcTion()
     nDer()
     changeSlope = ((((positivePoint-eval(yFunctionNew))/.001)-((eval(yFunctionNew)-negativePoint)/.001))/.001)
-    print(eval(yFunctionNew))
-    print(changeSlope)
+    #print(eval(yFunctionNew))
+    #print(changeSlope)
 
 xValue=reSet
 if xValue<0 and xValue2>0:
@@ -214,3 +214,31 @@ else:
     for i in range(xValue*accuracy, ((xValue2)*accuracy)+1):
         secondDer()
         xValue+=(1/accuracy)
+
+xValue=reSet
+if xValue<0 and xValue2>0:
+    for i in range(0, (abs(xValue)*accuracy+abs((xValue2)*accuracy)+1)):
+        secondDer()
+        if derSlope>=0 and derSlope2<=0:
+            print("between x="+str(xValue-(1/accuracy))+" and x="+str(xValue+(1/accuracy))+" there is a relative max!")
+        if derSlope<=0 and derSlope2>=0:
+            print("between x="+str(xValue-(1/accuracy))+" and x="+str(xValue+(1/accuracy))+" there is a relative min!")
+        if derSlope3<0 and derSlope==0 and derSlope2>0:
+            print("there is a relative min at x="+str(derSlope))
+        if derSlope3>0 and derSlope==0 and derSlope2<0:
+            print("there is a relative max at x="+str(derSlope))
+        xValue+=1
+else:
+    for i in range(xValue*accuracy, ((xValue2)*accuracy)+1):
+        nDer()
+        nDer2()
+        nDer3()
+        if derSlope>0 and derSlope2<0:
+            print("between x="+str(xValue)+" and x="+str(xValue+(1/accuracy))+" there is a relative max!")
+        if derSlope<0 and derSlope2>0:
+            print("between x="+str(xValue)+" and x="+str(xValue+(1/accuracy))+" there is a relative min!")
+        if derSlope3<0 and derSlope==0 and derSlope2>0:
+            print("there is a relative min at x="+str(derSlope))
+        if derSlope3>0 and derSlope==0 and derSlope2<0:
+            print("there is a relative max at x="+str(derSlope))
+        xValue+=1
