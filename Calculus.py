@@ -250,7 +250,6 @@ for i in range(0, (abs(xValue)*accuracy+abs((xValue2)*accuracy)+1)):
         secondDer()
         secondDer2()
         secondDer3()
-        
         if changeSlope>=0 and changeSlope2<=0:
             print("between x="+str(xValue-(1/accuracy))+" and x="+str(xValue+(1/accuracy))+" there is a infelction point!")
         if changeSlope<=0 and changeSlope2>=0:
