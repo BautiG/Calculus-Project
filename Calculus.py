@@ -222,44 +222,15 @@ def secondDer():
         global derSlope
         derSlope=(positivePoint-negativePoint)/.002
         #print(derSlope)
-    def nDer2():
-        yFunctionNewDer3 = ""
-    
-        for i in range(len(yFunction)):
-            if yFunction[i] == "x":
-                yFunctionNewDer3 += str(xValue+1+.001)
-            else:
-                yFunctionNewDer3 += yFunction[i]
-        i += 1
-    
-        positivePoint2=eval(yFunctionNewDer3)
-    
-        yFunctionNewDer4 = ""
-    
-        for i in range(len(yFunction)):
-            if yFunction[i] == "x":
-                yFunctionNewDer4 += str(xValue+1-.001)
-            else:
-                yFunctionNewDer4 += yFunction[i]
-        i += 1
-    
-        negativePoint2=eval(yFunctionNewDer4)
-        global derSlope2
-        derSlope2=(positivePoint2-negativePoint2)/.002
-        #print(derSlope2)
     nDer()
-    nDer2()
     if xValue<0 and xValue2>0:
         for i in range(0, (abs(xValue)*accuracy+abs((xValue2)*accuracy)+1)):
             nDer()
-            nDer2()
-            secondDerSlope=(derSlope2-derSlope)/((xValue+(1/accuracy))-xValue)
+            
     else:
         for i in range(xValue*accuracy, ((xValue2)*accuracy)+1):
             nDer()
-            nDer2()
-            secondDerSlope=(derSlope2-derSlope)/((xValue+(1/accuracy))-xValue)
-    secondDerSlope=secondDerSlope
+            
 secondDer()
 """
 xValue=reSet
