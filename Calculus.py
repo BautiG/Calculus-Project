@@ -28,6 +28,8 @@ def funcTion():
         else:
             yFunctionNew2 += yFunction[i]
     i += 1
+    global yFunctionNew2
+    yFunctionNew2=yFunctionNew2
     
     yFunctionNew3 = ""
     
@@ -37,6 +39,8 @@ def funcTion():
         else:
             yFunctionNew3 += yFunction[i]
     i += 1
+    global yFunctionNew3
+    yFunctionNew3=yFunctionNew3
     
 if xValue<0 and xValue2>0:
     for i in range(0, (abs(xValue)*accuracy+abs((xValue2)*accuracy)+1)):
@@ -144,6 +148,7 @@ def nDer2():
             yFunctionNewDer4 += yFunction[i]
     i += 1
     
+    global negativePoint2
     negativePoint2=eval(yFunctionNewDer4)
     global derSlope2
     derSlope2=(positivePoint2-negativePoint2)/.002
@@ -169,6 +174,7 @@ def nDer3():
             yFunctionNewDer6 += yFunction[i]
     i += 1
     
+    global negativePoint3
     negativePoint3=eval(yFunctionNewDer6)
     
     global derSlope3
@@ -217,14 +223,17 @@ else:
 def secondDer():
     funcTion()
     nDer()
+    global changeSlope
     changeSlope = ((((positivePoint-eval(yFunctionNew))/.001)-((eval(yFunctionNew)-negativePoint)/.001))/.001)
 def secondDer2():
     funcTion()
     nDer2()
+    global changeSlope2
     changeSlope2 = ((((positivePoint2-eval(yFunctionNew2))/.001)-((eval(yFunctionNew2)-negativePoint2)/.001))/.001)
 def secondDer3():
     funcTion()
     nDer3()
+    global changeSlope3
     changeSlope3 = ((((positivePoint3-eval(yFunctionNew3))/.001)-((eval(yFunctionNew3)-negativePoint3)/.001))/.001)
 xValue=reSet
 if xValue<0 and xValue2>0:
@@ -241,6 +250,7 @@ for i in range(0, (abs(xValue)*accuracy+abs((xValue2)*accuracy)+1)):
         secondDer()
         secondDer2()
         secondDer3()
+        
         if changeSlope>=0 and changeSlope2<=0:
             print("between x="+str(xValue-(1/accuracy))+" and x="+str(xValue+(1/accuracy))+" there is a infelction point!")
         if changeSlope<=0 and changeSlope2>=0:
@@ -263,5 +273,4 @@ else:
             print("there is an inflection point at x="+str(derSlope))
         if changeSlope3>0 and changeSlope==0 and changeSlope2<0:
             print("there is an inflection point at x="+str(derSlope))
-        
         xValue+=1
