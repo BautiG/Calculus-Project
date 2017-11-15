@@ -167,31 +167,30 @@ else:
     for i in range(xValue*accuracy, ((xValue2)*accuracy)+1):
         nDer()
         xValue+=(1/accuracy)
-xValue=reSet
 
-if xValue<0 and xValue2>0:
-    for i in range(0, (abs(xValue)*accuracy+abs((xValue2)*accuracy)+1)):
-        nDer()
-        nDer2()
-        nDer3()
-        if derSlope>0 and derSlope2<0:
-            print("between x="+str(xValue-(1/accuracy))+" and x="+str(xValue+(1/accuracy))+" there is a relative max!")
-        if derSlope<0 and derSlope2>0:
-            print("between x="+str(xValue-(1/accuracy))+" and x="+str(xValue+(1/accuracy))+" there is a relative min!")
-        if derSlope3<0 and derSlope==0 and derSlope2>0:
-            print("there is a relative min at x="+str(derSlope))
-        if derSlope3>0 and derSlope==0 and derSlope2<0:
-            print("there is a relative max at x="+str(derSlope))
-        xValue+=1
+xValue=reSet
+for i in range(0, (abs(xValue)*accuracy+abs((xValue2)*accuracy)+1)):
+         nDer()
+         nDer2()
+         nDer3()
+         if derSlope>=0 and derSlope2<=0:
+             print("between x="+str(xValue-(1/accuracy))+" and x="+str(xValue+(1/accuracy))+" there is a relative max!")
+         if derSlope<=0 and derSlope2>=0:
+             print("between x="+str(xValue-(1/accuracy))+" and x="+str(xValue+(1/accuracy))+" there is a relative min!")
+         if derSlope3<0 and derSlope==0 and derSlope2>0:
+             print("there is a relative min at x="+str(derSlope))
+         if derSlope3>0 and derSlope==0 and derSlope2<0:
+             print("there is a relative max at x="+str(derSlope))
+         xValue+=1
 else:
     for i in range(xValue*accuracy, ((xValue2)*accuracy)+1):
         nDer()
         nDer2()
         nDer3()
-        if derSlope>0 and derSlope2<0:
-            print("between x="+str(xValue)+" and x="+str(xValue+(1/accuracy))+" there is a relative max!")
-        if derSlope<0 and derSlope2>0:
-            print("between x="+str(xValue)+" and x="+str(xValue+(1/accuracy))+" there is a relative min!")
+        if derSlope>=0 and derSlope2<=0:
+            print("between x="+str(xValue-(1/accuracy))+" and x="+str(xValue+(1/accuracy))+" there is a relative max!")
+        if derSlope<=0 and derSlope2>=0:
+            print("between x="+str(xValue-(1/accuracy))+" and x="+str(xValue+(1/accuracy))+" there is a relative min!")
         if derSlope3<0 and derSlope==0 and derSlope2>0:
             print("there is a relative min at x="+str(derSlope))
         if derSlope3>0 and derSlope==0 and derSlope2<0:
@@ -214,31 +213,4 @@ else:
     for i in range(xValue*accuracy, ((xValue2)*accuracy)+1):
         secondDer()
         xValue+=(1/accuracy)
-
 xValue=reSet
-if xValue<0 and xValue2>0:
-    for i in range(0, (abs(xValue)*accuracy+abs((xValue2)*accuracy)+1)):
-        secondDer()
-        if derSlope>=0 and derSlope2<=0:
-            print("between x="+str(xValue-(1/accuracy))+" and x="+str(xValue+(1/accuracy))+" there is a relative max!")
-        if derSlope<=0 and derSlope2>=0:
-            print("between x="+str(xValue-(1/accuracy))+" and x="+str(xValue+(1/accuracy))+" there is a relative min!")
-        if derSlope3<0 and derSlope==0 and derSlope2>0:
-            print("there is a relative min at x="+str(derSlope))
-        if derSlope3>0 and derSlope==0 and derSlope2<0:
-            print("there is a relative max at x="+str(derSlope))
-        xValue+=1
-else:
-    for i in range(xValue*accuracy, ((xValue2)*accuracy)+1):
-        nDer()
-        nDer2()
-        nDer3()
-        if derSlope>0 and derSlope2<0:
-            print("between x="+str(xValue)+" and x="+str(xValue+(1/accuracy))+" there is a relative max!")
-        if derSlope<0 and derSlope2>0:
-            print("between x="+str(xValue)+" and x="+str(xValue+(1/accuracy))+" there is a relative min!")
-        if derSlope3<0 and derSlope==0 and derSlope2>0:
-            print("there is a relative min at x="+str(derSlope))
-        if derSlope3>0 and derSlope==0 and derSlope2<0:
-            print("there is a relative max at x="+str(derSlope))
-        xValue+=1
