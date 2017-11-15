@@ -219,15 +219,13 @@ def secondDer():
     nDer()
     changeSlope = ((((positivePoint-eval(yFunctionNew))/.001)-((eval(yFunctionNew)-negativePoint)/.001))/.001)
 def secondDer2():
-    xValue=xValue+1
     funcTion()
     nDer2()
-    changeSlope2 = ((((positivePoint2-eval(yFunctionNew))/.001)-((eval(yFunctionNew)-negativePoint2)/.001))/.001)
+    changeSlope2 = ((((positivePoint2-eval(yFunctionNew2))/.001)-((eval(yFunctionNew2)-negativePoint2)/.001))/.001)
 def secondDer3():
-    xValue=xValue-1
     funcTion()
     nDer3()
-    changeSlope3 = ((((positivePoint3-eval(yFunctionNew))/.001)-((eval(yFunctionNew)-negativePoint3)/.001))/.001)
+    changeSlope3 = ((((positivePoint3-eval(yFunctionNew3))/.001)-((eval(yFunctionNew3)-negativePoint3)/.001))/.001)
 xValue=reSet
 if xValue<0 and xValue2>0:
     for i in range(0, (abs(xValue)*accuracy+abs((xValue2)*accuracy)+1)):
@@ -267,4 +265,3 @@ else:
             print("there is an inflection point at x="+str(derSlope))
         
         xValue+=1
-"""
