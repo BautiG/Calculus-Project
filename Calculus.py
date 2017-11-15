@@ -245,6 +245,7 @@ else:
         secondDer()
         xValue+=(1/accuracy)
 
+inflecTion=100
 xValue=reSet
 for i in range(0, (abs(xValue)*accuracy+abs((xValue2)*accuracy)+1)):
         secondDer()
@@ -252,12 +253,16 @@ for i in range(0, (abs(xValue)*accuracy+abs((xValue2)*accuracy)+1)):
         secondDer3()
         if changeSlope>=0 and changeSlope2<=0:
             print("between x="+str(xValue-(1/accuracy))+" and x="+str(xValue+(1/accuracy))+" there is a infelction point!")
+            inflecTion=xValue
         if changeSlope<=0 and changeSlope2>=0:
             print("between x="+str(xValue-(1/accuracy))+" and x="+str(xValue+(1/accuracy))+" there is a infelction point!")
+            inflecTion=xValue
         if changeSlope3<0 and changeSlope==0 and changeSlope2>0:
             print("there is an inflection point at x="+str(derSlope))
+            inflecTion=xValue
         if changeSlope3>0 and changeSlope==0 and changeSlope2<0:
             print("there is an inflection point at x="+str(derSlope))
+            inflecTion=xValue
         xValue+=1
 else:
     for i in range(xValue*accuracy, ((xValue2)*accuracy)+1):
@@ -266,10 +271,21 @@ else:
         secondDer3()
         if changeSlope>=0 and changeSlope2<=0:
             print("between x="+str(xValue-(1/accuracy))+" and x="+str(xValue+(1/accuracy))+" there is a infelction point!")
+            inflecTion=xValue
         if changeSlope<=0 and changeSlope2>=0:
             print("between x="+str(xValue-(1/accuracy))+" and x="+str(xValue+(1/accuracy))+" there is a infelction point!")
+            inflecTion=xValue
         if changeSlope3<0 and changeSlope==0 and changeSlope2>0:
             print("there is an inflection point at x="+str(derSlope))
+            inflecTion=xValue
         if changeSlope3>0 and changeSlope==0 and changeSlope2<0:
             print("there is an inflection point at x="+str(derSlope))
+            inflecTion=xValue
         xValue+=1
+
+xValue=reSet
+secondDer()
+if changeSlope>0:
+    print("concave up on the interval: ["+str(reSet)+","+str(inflecTion)+"]")
+if changeSlope<0:
+    print("concave down on the interval: ["+str(reSet)+","+str(inflecTion)+"]")
