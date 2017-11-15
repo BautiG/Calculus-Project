@@ -7,6 +7,7 @@ xValue2 = int(input("And where does it end? "))
 accuracy = int(input("Between integers, how many times should the program check for slope? (The bigger the number the more accurate the second derivative is) "))
 
 xValue=reSet
+
 def funcTion():
     yFunctionNew = ""
     
@@ -18,9 +19,25 @@ def funcTion():
     i += 1
     
     yFunctionNew=eval(yFunctionNew)
-    #print(xValue)
-    #print(yFunctionNew)
-
+    
+    yFunctionNew2 = ""
+    
+    for i in range(len(yFunction)):
+        if yFunction[i] == "x":
+            yFunctionNew2 += str(xValue+1)
+        else:
+            yFunctionNew2 += yFunction[i]
+    i += 1
+    
+    yFunctionNew3 = ""
+    
+    for i in range(len(yFunction)):
+        if yFunction[i] == "x":
+            yFunctionNew3 += str(xValue-1)
+        else:
+            yFunctionNew3 += yFunction[i]
+    i += 1
+    
 if xValue<0 and xValue2>0:
     for i in range(0, (abs(xValue)*accuracy+abs((xValue2)*accuracy)+1)):
         funcTion()
@@ -201,20 +218,16 @@ def secondDer():
     funcTion()
     nDer()
     changeSlope = ((((positivePoint-eval(yFunctionNew))/.001)-((eval(yFunctionNew)-negativePoint)/.001))/.001)
-    #print(eval(yFunctionNew))
-    #print(changeSlope)
 def secondDer2():
+    xValue=xValue+1
     funcTion()
     nDer2()
     changeSlope2 = ((((positivePoint2-eval(yFunctionNew))/.001)-((eval(yFunctionNew)-negativePoint2)/.001))/.001)
-    #print(eval(yFunctionNew))
-    #print(changeSlope)
 def secondDer3():
+    xValue=xValue-1
     funcTion()
     nDer3()
     changeSlope3 = ((((positivePoint3-eval(yFunctionNew))/.001)-((eval(yFunctionNew)-negativePoint3)/.001))/.001)
-    #print(eval(yFunctionNew))
-    #print(changeSlope)
 xValue=reSet
 if xValue<0 and xValue2>0:
     for i in range(0, (abs(xValue)*accuracy+abs((xValue2)*accuracy)+1)):
@@ -241,5 +254,17 @@ for i in range(0, (abs(xValue)*accuracy+abs((xValue2)*accuracy)+1)):
         xValue+=1
 else:
     for i in range(xValue*accuracy, ((xValue2)*accuracy)+1):
+        secondDer()
+        secondDer2()
+        secondDer3()
+        if changeSlope>=0 and changeSlope2<=0:
+            print("between x="+str(xValue-(1/accuracy))+" and x="+str(xValue+(1/accuracy))+" there is a infelction point!")
+        if changeSlope<=0 and changeSlope2>=0:
+            print("between x="+str(xValue-(1/accuracy))+" and x="+str(xValue+(1/accuracy))+" there is a infelction point!")
+        if changeSlope3<0 and changeSlope==0 and changeSlope2>0:
+            print("there is an inflection point at x="+str(derSlope))
+        if changeSlope3>0 and changeSlope==0 and changeSlope2<0:
+            print("there is an inflection point at x="+str(derSlope))
         
         xValue+=1
+"""
