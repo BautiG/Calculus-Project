@@ -287,5 +287,13 @@ xValue=reSet
 secondDer()
 if changeSlope>0:
     print("concave up on the interval: ["+str(reSet)+","+str(inflecTion)+"]")
+    xValue=inflecTion+1
+    secondDer()
+    if changeSlope<0:
+        print("concave down on the interval: ["+str(inflecTion)+","+str(xValue2)+"]")
 if changeSlope<0:
     print("concave down on the interval: ["+str(reSet)+","+str(inflecTion)+"]")
+    xValue=inflecTion+1
+    secondDer()
+    if changeSlope>0:
+        print("concave up on the interval: ["+str(inflecTion)+","+str(xValue2)+"]")
