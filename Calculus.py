@@ -216,6 +216,7 @@ else:
 
 xValue=reSet
 for i in range(0, (abs(xValue)*accuracy+abs((xValue2)*accuracy)+1)):
+    
         if derSlope>=0 and derSlope2<=0:
             print("between x="+str(xValue-(1/accuracy))+" and x="+str(xValue+(1/accuracy))+" there is a infelction point!")
         if derSlope<=0 and derSlope2>=0:
@@ -227,12 +228,5 @@ for i in range(0, (abs(xValue)*accuracy+abs((xValue2)*accuracy)+1)):
         xValue+=1
 else:
     for i in range(xValue*accuracy, ((xValue2)*accuracy)+1):
-        if derSlope>=0 and derSlope2<=0:
-            print("between x="+str(xValue-(1/accuracy))+" and x="+str(xValue+(1/accuracy))+" there is a relative max!")
-        if derSlope<=0 and derSlope2>=0:
-            print("between x="+str(xValue-(1/accuracy))+" and x="+str(xValue+(1/accuracy))+" there is a relative min!")
-        if derSlope3<0 and derSlope==0 and derSlope2>0:
-            print("there is a relative min at x="+str(derSlope))
-        if derSlope3>0 and derSlope==0 and derSlope2<0:
-            print("there is a relative max at x="+str(derSlope))
+        
         xValue+=1
