@@ -126,10 +126,14 @@ else:
             smallest=smallest
         xValue+=(1/accuracy)
 
-#this actualy works now so don't try to fix it!!!
+#these print the cordinates of the absolute min and max
 print("Absolute Max at: y= (" + str(maxXvalue) + "," + str(biggest)+")")
 print("Absolute Min at: y= (" + str(minXvalue) + "," + str(smallest)+")")
-
+#this is how the derivative function is calculated
+"""
+how this works is it calculates a y value right after a point, right before a point
+and then plugs it in to the limit formula for slope at a point.
+"""
 def nDer():
     yFunctionNewDer = ""
     
@@ -157,6 +161,7 @@ def nDer():
     derSlope=(positivePoint-negativePoint)/.002
     #print(derSlope)
 
+#this calculates the slope at the point 1 unit after the xValue
 def nDer2():
     yFunctionNewDer3 = ""
     
@@ -183,6 +188,7 @@ def nDer2():
     global derSlope2
     derSlope2=(positivePoint2-negativePoint2)/.002
     #print(derSlope2)
+#this calculates the slope at the point 1 unit before the xValue
 def nDer3():
     yFunctionNewDer5 = ""
     
@@ -211,7 +217,8 @@ def nDer3():
     derSlope3=(positivePoint3-negativePoint3)/.002
     #print(derSlope2)
 
-xValue=reSet
+xValue=reSet#this resets xvalue
+#this calculates the derivative at any point. It does nothing unless the user inserts a print into the code
 if xValue<0 and xValue2>0:
     for i in range(0, (abs(xValue)*accuracy+abs((xValue2)*accuracy)+1)):
         nDer()
@@ -221,11 +228,17 @@ else:
         nDer()
         xValue+=(1/accuracy)
 
-xValue=reSet
+xValue=reSet#this resets xvalue
+"""
+this finds relative maxes and mins by chekcing the xvalues that comes before and value that come after
+by calculating the slope at those points and seeing if there is a sign change. If it lands exactly on a zero,
+it will say that there is a min/max at that point. But if there is no zero, only a sign change, it will give a 
+range in which the min/max can be found.
+"""
 for i in range(0, (abs(xValue)*accuracy+abs((xValue2)*accuracy)+1)):
-         nDer()
-         nDer2()
-         nDer3()
+         nDer()#calculates derivative at point
+         nDer2()#calculates derivative 1 after point
+         nDer3()#calculates derivative 1 before point
          if derSlope>=0 and derSlope2<=0:
              print("between x="+str(xValue-(1/accuracy))+" and x="+str(xValue+(1/accuracy))+" there is a relative max!")
          if derSlope<=0 and derSlope2>=0:
@@ -249,23 +262,26 @@ else:
         if derSlope3>0 and derSlope==0 and derSlope2<0:
             print("there is a relative max at x="+str(derSlope))
         xValue+=1
-
+#this calculates the second derivative
 def secondDer():
-    funcTion()
-    nDer()
-    global changeSlope
+    funcTion()#runs function(calculates y value)
+    nDer()#runs Derivative(calculates slope at point)
+    global changeSlope#this makes the varibale global(availeable outside of the function)
+    #this below calculates the second derivative by calculating change in slope
     changeSlope = ((((positivePoint-eval(yFunctionNew))/.001)-((eval(yFunctionNew)-negativePoint)/.001))/.001)
+#this does the same thing as secondDer() except that it does it for xValue+1
 def secondDer2():
     funcTion()
     nDer2()
     global changeSlope2
     changeSlope2 = ((((positivePoint2-eval(yFunctionNew2))/.001)-((eval(yFunctionNew2)-negativePoint2)/.001))/.001)
+#this does the same thing as secondDer() except that it does it for xValue-1
 def secondDer3():
     funcTion()
     nDer3()
     global changeSlope3
     changeSlope3 = ((((positivePoint3-eval(yFunctionNew3))/.001)-((eval(yFunctionNew3)-negativePoint3)/.001))/.001)
-xValue=reSet
+xValue=reSet#this resets xValue to its original value
 if xValue<0 and xValue2>0:
     for i in range(0, (abs(xValue)*accuracy+abs((xValue2)*accuracy)+1)):
         secondDer()
