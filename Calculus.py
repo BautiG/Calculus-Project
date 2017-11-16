@@ -52,6 +52,20 @@ else:
         funcTion()
         xValue+=(1/accuracy)
 
+xValue=reSet
+if xValue<0 and xValue2>0:
+    for i in range(0, (abs(xValue)*accuracy+abs((xValue2)*accuracy)+1)):
+            funcTion()
+            if eval(yFunctionNew)==0:
+                print("there is a zero at x="+str(xValue))
+            xValue+=1
+else:
+    for i in range(xValue*accuracy, ((xValue2)*accuracy)+1):
+        funcTion()
+        if eval(yFunctionNew)==0:
+            print("there is a zero at x="+str(xValue))
+        xValue+=1
+
 maxXvalue = 0  #this just establishes a veriable
 xValue=reSet
 smallest=1000
@@ -100,8 +114,6 @@ else:
 print("Absolute Max at: y= (" + str(maxXvalue) + "," + str(biggest)+")")
 print("Absolute Min at: y= (" + str(minXvalue) + "," + str(smallest)+")")
 
-
-
 def nDer():
     yFunctionNewDer = ""
     
@@ -128,7 +140,6 @@ def nDer():
     global derSlope
     derSlope=(positivePoint-negativePoint)/.002
     #print(derSlope)
-    
 
 def nDer2():
     yFunctionNewDer3 = ""
