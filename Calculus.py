@@ -1,17 +1,21 @@
-import math
-#make sure that if you need to do trig or logs do "math.()"
-#use paranthesis when pluging in an exponent in the equation
+"""
+welcom to our program! Billy and I bascially made a program that calculates a bunch of different things
+about a function that the user gives the program. Just remember to use the proper python syntax.
+and from this point on, anything in a "#" comentary on how the program works:
+"""
+import math #brings in the basic python math used in the rest of the program
+#these lines below imput the information to run the program
 yFunction = str(input("y="))
 reSet = int(input("Where does your interval start? "))
 xValue2 = int(input("And where does it end? "))
 accuracy = int(input("Between integers, how many times should the program check for slope? (The bigger the number the more accurate the second derivative is) "))
 
+xValue=reSet#this will allow us to reset the value of xValue after it is manipulated thoughout the program
 
-xValue=reSet
-
+#this defines a function that takes an x value and calculates a y value using "yFunction"
 def funcTion():
     yFunctionNew = ""
-    
+    #this below goes though each vatiable and finds x and replaces it with your number
     for i in range(len(yFunction)):
         if yFunction[i] == "x":
             yFunctionNew += str(xValue)
@@ -20,7 +24,7 @@ def funcTion():
     i += 1
     
     yFunctionNew=eval(yFunctionNew)
-    
+    #does the same thing but for x+1
     yFunctionNew2 = ""
     
     for i in range(len(yFunction)):
@@ -29,9 +33,9 @@ def funcTion():
         else:
             yFunctionNew2 += yFunction[i]
     i += 1
-    global yFunctionNew2
+    global yFunctionNew2#makes the variable availeable outside of the function
     yFunctionNew2=yFunctionNew2
-    
+    #does the same thing but for x-1
     yFunctionNew3 = ""
     
     for i in range(len(yFunction)):
@@ -40,9 +44,10 @@ def funcTion():
         else:
             yFunctionNew3 += yFunction[i]
     i += 1
-    global yFunctionNew3
+    global yFunctionNew3#makes the variable availeable outside of the function
     yFunctionNew3=yFunctionNew3
-    
+
+#this below just calculates every y value on the interval(doesn't really get used unless the user edits)
 if xValue<0 and xValue2>0:
     for i in range(0, (abs(xValue)*accuracy+abs((xValue2)*accuracy)+1)):
         funcTion()
@@ -52,7 +57,12 @@ else:
         funcTion()
         xValue+=(1/accuracy)
 
-xValue=reSet
+xValue=reSet#resets xValue to original value
+"""
+every for loop has to run 2 seperate ways depending on the interval so I will only explain this
+once here. If the interval starts negative and makes it to positive it has to do a different number of 
+checks than if it were just negative or just positive. This means that 
+"""
 if xValue<0 and xValue2>0:
     for i in range(0, (abs(xValue)*accuracy+abs((xValue2)*accuracy)+1)):
             funcTion()
@@ -313,9 +323,7 @@ if changeSlope<0:
     secondDer()
     if changeSlope>0:
         print("concave up on the interval: ["+str(inflecTion)+","+str(xValue2)+"]")
-        
-        
-        
+
 xValue=reSet
 xPoint = reSet
 increasing = 3333 #random number, not likely to come out as slope
