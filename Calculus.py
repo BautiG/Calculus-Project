@@ -50,7 +50,7 @@ def funcTion():
 #this below just calculates every y value on the interval(doesn't really get used unless the user edits)
 if xValue<0 and xValue2>0:
     for i in range(0, (abs(xValue)*accuracy+abs((xValue2)*accuracy)+1)):
-        funcTion()
+        funcTion()#this runs function
         xValue+=(1/accuracy)
 else:
     for i in range(xValue*accuracy, ((xValue2)*accuracy)+1):
@@ -62,13 +62,15 @@ xValue=reSet#resets xValue to original value
 every for loop has to run 2 seperate ways depending on the interval so I will only explain this
 once here. If the interval starts negative and makes it to positive it has to do a different number of 
 checks than if it were just negative or just positive. This means that we have to do an if statement 
-with a different range check for each one.
+with a different range check for each one. I will only explain the code on the top because the code on the
+bottom is exactly identical.
 """
+#this calculates if there is a zero on the interval
 if xValue<0 and xValue2>0:
     for i in range(0, (abs(xValue)*accuracy+abs((xValue2)*accuracy)+1)):
-            funcTion()
+            funcTion()#this runs function
             if eval(yFunctionNew)==0:
-                print("there is a zero at x="+str(xValue))
+                print("there is a zero at x="+str(xValue))#this prints the function
             xValue+=1
 else:
     for i in range(xValue*accuracy, ((xValue2)*accuracy)+1):
@@ -77,14 +79,15 @@ else:
             print("there is a zero at x="+str(xValue))
         xValue+=1
 
+
 maxXvalue = 0  #this just establishes a veriable
-xValue=reSet
-smallest=1000
-biggest=-1000
-if xValue<0 and xValue2>0:
+xValue=reSet #this resets manipulated xValue
+smallest=1000 #this just establishes a veriable
+biggest=-1000 #this just establishes a veriable
+if xValue<0 and xValue2>0: #this is another one of those special loops
     for i in range(0, (abs(xValue)*accuracy+abs((xValue2)*accuracy)+1)):
-        funcTion()
-        if int(eval(yFunctionNew))>=biggest:
+        funcTion()#this runs function
+        if eval(yFunctionNew)>=biggest:
             biggest=int(eval(yFunctionNew))
             maxXvalue = xValue  #this step makes that variable equal to the xvalue of the surent highest point
         else:
