@@ -1,7 +1,10 @@
 """
 welcom to our program! Billy and I bascially made a program that calculates a bunch of different things
 about a function that the user gives the program. Just remember to use the proper python syntax.
-and from this point on, anything in a "#" or in between "" is comentary on how the program works:
+and from this point on, anything in a "#" or in between "" is comentary on how the program works.
+Make sure that when running the program you give only the accuracy you want and the range you want.
+Do not make these numbers too big as this will casue the program to take a long time calculating and
+might cause the resutls to be innacurate do to our numbercal (rather than algebraic) calculations.
 """
 import math #brings in the basic python math used in the rest of the program
 #these lines below imput the information to run the program
