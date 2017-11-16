@@ -89,7 +89,7 @@ if xValue<0 and xValue2>0: #this is another one of those special loops
     for i in range(0, (abs(xValue)*accuracy+abs((xValue2)*accuracy)+1)):
         funcTion()#this runs function
         if eval(yFunctionNew)>=biggest:
-            biggest=int(eval(yFunctionNew))
+            biggest=eval(yFunctionNew)
             maxXvalue = xValue  #this step makes that variable equal to the xvalue of the surent highest point
         else:
             biggest=biggest
@@ -110,9 +110,9 @@ xValue=reSet#this resets xValue
 if xValue<0 and xValue2>0:#this is one of those special loops
     for i in range(0, (abs(xValue)*accuracy+abs((xValue2)*accuracy)+1)):
         funcTion()#this runs function
-        if eval(yFunctionNew)<=smallest:
+        if eval(yFunctionNew)<=smallest: 
             smallest=eval(yFunctionNew)
-            minXvalue = xValue  #this step makes that variable equal to the xvalue of the surent highest point
+            minXvalue = xValue  #this step makes that variable equal to the xvalue of the surent lowest point
         else:
             smallest=smallest
         xValue+=(1/accuracy)
@@ -121,7 +121,7 @@ else:
         funcTion()
         if eval(yFunctionNew)<=smallest:
             smallest=eval(yFunctionNew)
-            minXvalue = xValue  #this step makes that variable equal to the xvalue of the surent highest point
+            minXvalue = xValue  #this step makes that variable equal to the xvalue of the surent lowest point
         else:
             smallest=smallest
         xValue+=(1/accuracy)
