@@ -61,7 +61,8 @@ xValue=reSet#resets xValue to original value
 """
 every for loop has to run 2 seperate ways depending on the interval so I will only explain this
 once here. If the interval starts negative and makes it to positive it has to do a different number of 
-checks than if it were just negative or just positive. This means that 
+checks than if it were just negative or just positive. This means that we have to do an if statement 
+with a different range check for each one.
 """
 if xValue<0 and xValue2>0:
     for i in range(0, (abs(xValue)*accuracy+abs((xValue2)*accuracy)+1)):
