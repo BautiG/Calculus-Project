@@ -6,6 +6,7 @@ reSet = int(input("Where does your interval start? "))
 xValue2 = int(input("And where does it end? "))
 accuracy = int(input("Between integers, how many times should the program check for slope? (The bigger the number the more accurate the second derivative is) "))
 
+
 xValue=reSet
 
 def funcTion():
@@ -99,6 +100,8 @@ else:
 print("Absolute Max at: y= (" + str(maxXvalue) + "," + str(biggest)+")")
 print("Absolute Min at: y= (" + str(minXvalue) + "," + str(smallest)+")")
 
+
+
 def nDer():
     yFunctionNewDer = ""
     
@@ -107,7 +110,7 @@ def nDer():
             yFunctionNewDer += str(xValue+.001)
         else:
             yFunctionNewDer += yFunction[i]
-    i += 1
+    
     global positivePoint
     positivePoint=eval(yFunctionNewDer)
     
@@ -118,7 +121,6 @@ def nDer():
             yFunctionNewDer2 += str(xValue-.001)
         else:
             yFunctionNewDer2 += yFunction[i]
-    i += 1
     
     global negativePoint
     negativePoint=eval(yFunctionNewDer2)
@@ -126,6 +128,7 @@ def nDer():
     global derSlope
     derSlope=(positivePoint-negativePoint)/.002
     #print(derSlope)
+    
 
 def nDer2():
     yFunctionNewDer3 = ""
@@ -299,3 +302,69 @@ if changeSlope<0:
     secondDer()
     if changeSlope>0:
         print("concave up on the interval: ["+str(inflecTion)+","+str(xValue2)+"]")
+        
+        
+xValue=reSet
+xPoint = reSet
+increasing = 3333 #random number, not likely to come out as slope
+increasing2 = 0
+decreasing = 2222
+decreasing2 = 0
+slopePositive = 0 #1 means positive, 2 means negative
+
+if xValue < 0 and xValue2 > 0:
+    for i in range(0, (abs(xValue)*accuracy+abs((xValue2)*accuracy)+1)):
+        nDer() 
+        #print(derSlope)
+        
+        if derSlope > 0 and increasing == 3333:
+            increasing = xPoint
+        if derSlope < 0 and decreasing == 2222:
+            decreasing = xPoint
+        elif derSlope>0:
+            slopePositive = 1
+            increasing2 = xPoint
+        elif derSlope<0:
+            slopePositive = 2
+            decreasing2 = xPoint
+        elif derSlope == 0 and slopePositive == 1:
+            increasing2 = xPoint
+            decreasing = xPoint
+        elif derSlope == 0 and slopePositive == 2:
+            decreasing2 = xPoint
+            increasing = xPoint
+            
+        
+        xPoint += (1/accuracy) 
+        xValue += (1/accuracy)
+            
+    print("function is increasing between " + str(increasing) + " and " + str(increasing2))
+    print("function is decreasing between " + str(decreasing) + " and " + str(decreasing2))    
+else:    
+    for i in range(xValue*accuracy, ((xValue2)*accuracy)+1):
+        nDer() 
+        #print(derSlope)
+        
+        if derSlope > 0 and increasing == 3333:
+            increasing = xPoint
+        if derSlope < 0 and decreasing == 2222:
+            decreasing = xPoint
+        elif derSlope>0:
+            slopePositive = 1
+            increasing2 = xPoint
+        elif derSlope<0:
+            slopePositive = 2
+            decreasing2 = xPoint
+        elif derSlope == 0 and slopePositive == 1:
+            increasing2 = xPoint
+            decreasing = xPoint
+        elif derSlope == 0 and slopePositive == 2:
+            decreasing2 = xPoint
+            increasing = xPoint
+            
+        
+        xPoint += (1/accuracy) 
+        xValue += (1/accuracy)
+            
+    print("function is increasing between x=" + str(increasing) + " and x=" + str(increasing2))
+    print("function is decreasing between x=" + str(decreasing) + " and x=" + str(decreasing2)) 
