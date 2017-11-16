@@ -248,7 +248,7 @@ else:
         secondDer()
         xValue+=(1/accuracy)
 
-inflecTion=100
+inflecTion=xValue2
 xValue=reSet
 for i in range(0, (abs(xValue)*accuracy+abs((xValue2)*accuracy)+1)):
         secondDer()
