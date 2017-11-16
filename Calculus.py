@@ -338,8 +338,8 @@ if xValue < 0 and xValue2 > 0:
         xPoint += (1/accuracy) 
         xValue += (1/accuracy)
             
-    print("function is increasing between " + str(increasing) + " and " + str(increasing2))
-    print("function is decreasing between " + str(decreasing) + " and " + str(decreasing2))    
+    print("function is increasing between x=" + str(increasing) + " and x=" + str(increasing2))
+    print("function is decreasing between x=" + str(decreasing) + " and x=" + str(decreasing2))    
 else:    
     for i in range(xValue*accuracy, ((xValue2)*accuracy)+1):
         nDer() 
