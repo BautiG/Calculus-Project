@@ -1,7 +1,7 @@
 """
 welcom to our program! Billy and I bascially made a program that calculates a bunch of different things
 about a function that the user gives the program. Just remember to use the proper python syntax.
-and from this point on, anything in a "#" comentary on how the program works:
+and from this point on, anything in a "#" or in between "" is comentary on how the program works:
 """
 import math #brings in the basic python math used in the rest of the program
 #these lines below imput the information to run the program
