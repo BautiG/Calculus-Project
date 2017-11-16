@@ -143,7 +143,7 @@ def nDer():
         else:
             yFunctionNewDer += yFunction[i]
     
-    global positivePoint
+    global positivePoint#y value right after a point
     positivePoint=eval(yFunctionNewDer)
     
     yFunctionNewDer2 = ""
@@ -154,11 +154,11 @@ def nDer():
         else:
             yFunctionNewDer2 += yFunction[i]
     
-    global negativePoint
+    global negativePoint#y value right before a point
     negativePoint=eval(yFunctionNewDer2)
     
     global derSlope
-    derSlope=(positivePoint-negativePoint)/.002
+    derSlope=(positivePoint-negativePoint)/.002#this calculates slope right at a point
     #print(derSlope)
 
 #this calculates the slope at the point 1 unit after the xValue
@@ -282,7 +282,11 @@ def secondDer3():
     global changeSlope3
     changeSlope3 = ((((positivePoint3-eval(yFunctionNew3))/.001)-((eval(yFunctionNew3)-negativePoint3)/.001))/.001)
 xValue=reSet#this resets xValue to its original value
-if xValue<0 and xValue2>0:
+"""
+this calculates the second derivative for every point, but shows no ouput unless
+the user insers a print function into the loop
+"""
+if xValue<0 and xValue2>0:#this is one of those special loops
     for i in range(0, (abs(xValue)*accuracy+abs((xValue2)*accuracy)+1)):
         secondDer()
         xValue+=(1/accuracy)
@@ -291,22 +295,27 @@ else:
         secondDer()
         xValue+=(1/accuracy)
 
-inflecTion=xValue2
-xValue=reSet
+inflecTion=xValue2#this just sets the inflection point to the last point in case there is no other point
+xValue=reSet#this resets xValue
+"""
+this works the same way that the relative max and mins work. It finds the spot in the second
+derivative that there is a 0 and then checks that there is a sign change in the xValues before and
+after. If it only sees a sign change it gives a range.
+"""
 for i in range(0, (abs(xValue)*accuracy+abs((xValue2)*accuracy)+1)):
-        secondDer()
-        secondDer2()
-        secondDer3()
-        if changeSlope>=0 and changeSlope2<=0:
+        secondDer()#this runs second derivative
+        secondDer2()#this runs second derivative for x+1
+        secondDer3()#this runs second derivative for x-1
+        if changeSlope>=0 and changeSlope2<=0:#chekcs range of inflection
             print("between x="+str(xValue-(1/accuracy))+" and x="+str(xValue+(1/accuracy))+" there is a infelction point!")
             inflecTion=xValue
-        if changeSlope<=0 and changeSlope2>=0:
+        if changeSlope<=0 and changeSlope2>=0:#chekcs range of inflection
             print("between x="+str(xValue-(1/accuracy))+" and x="+str(xValue+(1/accuracy))+" there is a infelction point!")
             inflecTion=xValue
-        if changeSlope3<0 and changeSlope==0 and changeSlope2>0:
+        if changeSlope3<0 and changeSlope==0 and changeSlope2>0:#checks if its an inflection point
             print("there is an inflection point at x="+str(derSlope))
             inflecTion=xValue
-        if changeSlope3>0 and changeSlope==0 and changeSlope2<0:
+        if changeSlope3>0 and changeSlope==0 and changeSlope2<0:#checks if its an inflection point
             print("there is an inflection point at x="+str(derSlope))
             inflecTion=xValue
         xValue+=1
@@ -329,8 +338,8 @@ else:
             inflecTion=xValue
         xValue+=1
 
-xValue=reSet
-secondDer()
+xValue=reSet#this resests xValue
+secondDer()#this runs the second derivative at the original point(sart of interval)
 if changeSlope>0:
     print("concave up on the interval: ["+str(reSet)+","+str(inflecTion)+"]")
     xValue=inflecTion+1
