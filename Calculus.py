@@ -84,6 +84,7 @@ maxXvalue = 0  #this just establishes a veriable
 xValue=reSet #this resets manipulated xValue
 smallest=1000 #this just establishes a veriable
 biggest=-1000 #this just establishes a veriable
+#this calculates the abosolute max
 if xValue<0 and xValue2>0: #this is another one of those special loops
     for i in range(0, (abs(xValue)*accuracy+abs((xValue2)*accuracy)+1)):
         funcTion()#this runs function
@@ -103,11 +104,12 @@ else:
             biggest=biggest
         xValue+=(1/accuracy)
 
+#this calculates the absolue min
 minXvalue = 0
-xValue=reSet
-if xValue<0 and xValue2>0:
+xValue=reSet#this resets xValue
+if xValue<0 and xValue2>0:#this is one of those special loops
     for i in range(0, (abs(xValue)*accuracy+abs((xValue2)*accuracy)+1)):
-        funcTion()
+        funcTion()#this runs function
         if eval(yFunctionNew)<=smallest:
             smallest=eval(yFunctionNew)
             minXvalue = xValue  #this step makes that variable equal to the xvalue of the surent highest point
