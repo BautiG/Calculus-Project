@@ -51,19 +51,20 @@ else:
     for i in range(xValue*accuracy, ((xValue2)*accuracy)+1):
         funcTion()
         xValue+=(1/accuracy)
-        
+"""
 if xValue<0 and xValue2>0:
     for i in range(0, (abs(xValue)*accuracy+abs((xValue2)*accuracy)+1)):
-            funcTion()
-            if eval(yFunctionNew)==0:
-                print("there is a zero at x="+str(xValue))
-            xValue+=1
+        funcTion()
+        if eval(yFunctionNew)==0:
+            print("there is a zero at x="+str(xValue))
+        xValue+=(1/accuracy)
 else:
     for i in range(xValue*accuracy, ((xValue2)*accuracy)+1):
         funcTion()
         if eval(yFunctionNew)==0:
             print("there is a zero at x="+str(xValue))
-        xValue+=1
+        xValue+=(1/accuracy)
+"""
 
 maxXvalue = 0  #this just establishes a veriable
 xValue=reSet
@@ -220,7 +221,7 @@ for i in range(0, (abs(xValue)*accuracy+abs((xValue2)*accuracy)+1)):
              print("there is a relative min at x="+str(derSlope))
          if derSlope3>0 and derSlope==0 and derSlope2<0:
              print("there is a relative max at x="+str(derSlope))
-         xValue+=1
+         xValue+=(1/accuracy)
 else:
     for i in range(xValue*accuracy, ((xValue2)*accuracy)+1):
         nDer()
@@ -234,7 +235,7 @@ else:
             print("there is a relative min at x="+str(derSlope))
         if derSlope3>0 and derSlope==0 and derSlope2<0:
             print("there is a relative max at x="+str(derSlope))
-        xValue+=1
+        xValue+=(1/accuracy)
 
 def secondDer():
     funcTion()
@@ -251,6 +252,7 @@ def secondDer3():
     nDer3()
     global changeSlope3
     changeSlope3 = ((((positivePoint3-eval(yFunctionNew3))/.001)-((eval(yFunctionNew3)-negativePoint3)/.001))/.001)
+
 xValue=reSet
 if xValue<0 and xValue2>0:
     for i in range(0, (abs(xValue)*accuracy+abs((xValue2)*accuracy)+1)):
@@ -279,7 +281,7 @@ for i in range(0, (abs(xValue)*accuracy+abs((xValue2)*accuracy)+1)):
         if changeSlope3>0 and changeSlope==0 and changeSlope2<0:
             print("there is an inflection point at x="+str(derSlope))
             inflecTion=xValue
-        xValue+=1
+        xValue+=(1/accuracy)
 else:
     for i in range(xValue*accuracy, ((xValue2)*accuracy)+1):
         secondDer()
@@ -297,7 +299,7 @@ else:
         if changeSlope3>0 and changeSlope==0 and changeSlope2<0:
             print("there is an inflection point at x="+str(derSlope))
             inflecTion=xValue
-        xValue+=1
+        xValue+=(1/accuracy)
 
 xValue=reSet
 secondDer()
