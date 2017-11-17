@@ -258,7 +258,7 @@ for i in range(0, (abs(xValue)*accuracy+abs((xValue2)*accuracy)+1)):
             print("there is a relative min at x="+str(xValue))
         if derSlope3>0 and derSlope==0 and derSlope2<0:
             print("there is a relative max at x="+str(xValue))
-        xValue+=(1/accuracy)
+        xValue+=1
 else:
     for i in range(xValue*accuracy, ((xValue2)*accuracy)+1):
         nDer()
