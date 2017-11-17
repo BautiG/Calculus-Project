@@ -258,7 +258,7 @@ for i in range(0, (abs(xValue)*accuracy+abs((xValue2)*accuracy)+1)):
              print("there is a relative min at x="+str(xValue))
          if derSlope3>0 and derSlope==0 and derSlope2<0:
              print("there is a relative max at x="+str(xValue))
-         xValue+=1
+         xValue+=(1/accuracy)
 else:
     for i in range(xValue*accuracy, ((xValue2)*accuracy)+1):
         nDer()
@@ -332,23 +332,23 @@ for i in range(0, (abs(xValue)*accuracy+abs((xValue2)*accuracy)+1)):
         xValue+=1
 else:
     for i in range(xValue*accuracy, ((xValue2)*accuracy)+1):
-        secondDer()
-        secondDer2()
-        secondDer3()
-        if changeSlope>=0 and changeSlope2<=0:
+        secondDer()#this runs second derivative
+        secondDer2()#this runs second derivative for x+1
+        secondDer3()#this runs second derivative for x-1
+        if changeSlope>0 and changeSlope2<0:#chekcs range of inflection
             print("between x="+str(xValue-(1/accuracy))+" and x="+str(xValue+(1/accuracy))+" there is a infelction point!")
             inflecTion=xValue
-        if changeSlope<=0 and changeSlope2>=0:
+        if changeSlope<0 and changeSlope2>0:#chekcs range of inflection
             print("between x="+str(xValue-(1/accuracy))+" and x="+str(xValue+(1/accuracy))+" there is a infelction point!")
             inflecTion=xValue
-        if changeSlope3<0 and changeSlope==0 and changeSlope2>0:
+        if changeSlope3<0 and changeSlope==0 and changeSlope2>0:#checks if its an inflection point
             print("there is an inflection point at x="+str(xValue))
             inflecTion=xValue
-        if changeSlope3>0 and changeSlope==0 and changeSlope2<0:
+        if changeSlope3>0 and changeSlope==0 and changeSlope2<0:#checks if its an inflection point
             print("there is an inflection point at x="+str(xValue))
             inflecTion=xValue
         xValue+=1
-
+"""
 xValue=reSet#this resests xValue
 secondDer()#this runs the second derivative at the original point(sart of interval)
 if changeSlope>0:
@@ -455,3 +455,4 @@ else:
         print("function is increasing between x=" + str(increasing) + " and x=" + str(increasing2))
     if increasing != 3333:
         print("function is decreasing between x=" + str(decreasing) + " and x=" + str(decreasing2)) 
+"""
