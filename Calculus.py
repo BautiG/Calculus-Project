@@ -350,6 +350,15 @@ else:
         xValue+=1
 
 xValue=reSet
+secondDer()
+if changeSlope>0:
+    print("between x="+str(xValue)+"and x="+str(inflecTion)+" it is concave up")
+    print("between x="+str(inflecTion)+"and x="+str(xValue2)+" it is concave down")
+if changeSlope<0:
+    print("between x="+str(xValue)+"and x="+str(inflecTion)+" it is concave down")
+    print("between x="+str(inflecTion)+"and x="+str(xValue2)+" it is concave up")
+"""
+xValue=reSet
 xPoint = reSet
 increasing = 3333 #random number, not likely to come out as slope
 increasing2 = 0
@@ -404,3 +413,4 @@ if xValue < 0 and xValue2 > 0:
 else:    
     for i in range(xValue*accuracy, ((xValue2)*accuracy)+1):
         print("hi")
+"""
