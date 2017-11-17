@@ -178,7 +178,7 @@ def nDer2():
     
     for i in range(len(yFunction)):
         if yFunction[i] == "x":
-            yFunctionNewDer3 += str(xValue+1+.001)
+            yFunctionNewDer3 += str(xValue+.1+.001)
         else:
             yFunctionNewDer3 += yFunction[i]
     i += 1
@@ -189,7 +189,7 @@ def nDer2():
     
     for i in range(len(yFunction)):
         if yFunction[i] == "x":
-            yFunctionNewDer4 += str(xValue+1-.001)
+            yFunctionNewDer4 += str(xValue+.1-.001)
         else:
             yFunctionNewDer4 += yFunction[i]
     i += 1
@@ -205,7 +205,7 @@ def nDer3():
     
     for i in range(len(yFunction)):
         if yFunction[i] == "x":
-            yFunctionNewDer5 += str(xValue-1+.001)
+            yFunctionNewDer5 += str(xValue-.1+.001)
         else:
             yFunctionNewDer5 += yFunction[i]
     i += 1
@@ -216,7 +216,7 @@ def nDer3():
     
     for i in range(len(yFunction)):
         if yFunction[i] == "x":
-            yFunctionNewDer6 += str(xValue-1-.001)
+            yFunctionNewDer6 += str(xValue-.1-.001)
         else:
             yFunctionNewDer6 += yFunction[i]
     i += 1
