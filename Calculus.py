@@ -287,7 +287,7 @@ xValue=reSet
 nDer()
 if derSlope>0:
     print("between x="+str(xValue)+"and x="+str(maxMin)+" it is increasing")
-    xValue=maxMin+1
+    xValue=maxMin+.1
     nDer()
     if derSlope<0:
         print("between x="+str(maxMin)+"and x="+str(xValue2)+" it is decreasing")
@@ -295,7 +295,7 @@ xValue=reSet
 nDer()
 if derSlope<0:
     print("between x="+str(xValue)+"and x="+str(maxMin)+" it is decreasing")
-    xValue=maxMin+1
+    xValue=maxMin+.1
     nDer()
     if derSlope>0:
         print("between x="+str(maxMin)+"and x="+str(xValue2)+" it is increasing")
@@ -379,7 +379,7 @@ xValue=reSet
 secondDer()
 if changeSlope>0:
     print("between x="+str(xValue)+"and x="+str(inflecTion)+" it is concave up")
-    xValue=inflecTion+1
+    xValue=inflecTion+.1
     secondDer()
     if changeSlope<0:
         print("between x="+str(inflecTion)+"and x="+str(xValue2)+" it is concave down")
@@ -387,7 +387,7 @@ xValue=reSet
 secondDer()
 if changeSlope<0:
     print("between x="+str(xValue)+"and x="+str(inflecTion)+" it is concave down")
-    xValue=inflecTion+1
+    xValue=inflecTion+.1
     secondDer()
     if changeSlope>0:
         print("between x="+str(inflecTion)+"and x="+str(xValue2)+" it is concave up")
