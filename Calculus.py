@@ -71,10 +71,10 @@ bottom is exactly identical.
 #this calculates if there is a zero on the interval
 if xValue<0 and xValue2>0:
     for i in range(0, (abs(xValue)*accuracy+abs((xValue2)*accuracy)+1)):
-            funcTion()#this runs function
-            if eval(yFunctionNew)==0:
-                print("there is a zero at x="+str(xValue))#this prints the function
-            xValue+=1
+        funcTion()#this runs function
+        if eval(yFunctionNew)==0:
+            print("there is a zero at x="+str(xValue))#this prints the function
+        xValue+=1
 else:
     for i in range(xValue*accuracy, ((xValue2)*accuracy)+1):
         funcTion()
