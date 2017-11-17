@@ -246,18 +246,23 @@ by calculating the slope at those points and seeing if there is a sign change. I
 it will say that there is a min/max at that point. But if there is no zero, only a sign change, it will give a 
 range in which the min/max can be found.
 """
+maxMin=xValue2
 for i in range(0, (abs(xValue)*accuracy+abs((xValue2)*accuracy)+1)):
         nDer()#calculates derivative at point
         nDer2()#calculates derivative 1 after point
         nDer3()#calculates derivative 1 before point
         if derSlope>0 and derSlope2<0:
             print("between x="+str(xValue-1)+" and x="+str(xValue+1)+" there is a relative max!")
+            maxMin=xValue
         if derSlope<0 and derSlope2>0:
             print("between x="+str(xValue-1)+" and x="+str(xValue+1)+" there is a relative min!")
+            maxMin=xValue
         if derSlope3<0 and derSlope==0 and derSlope2>0:
             print("there is a relative min at x="+str(xValue))
+            maxMin=xValue
         if derSlope3>0 and derSlope==0 and derSlope2<0:
             print("there is a relative max at x="+str(xValue))
+            maxMin=xValue
         xValue+=1
 else:
     for i in range(xValue*accuracy, ((xValue2)*accuracy)+1):
@@ -266,13 +271,34 @@ else:
         nDer3()#calculates derivative 1 before point
         if derSlope>0 and derSlope2<0:
             print("between x="+str(xValue-1)+" and x="+str(xValue+1)+" there is a relative max!")
+            maxMin=xValue
         if derSlope<0 and derSlope2>0:
             print("between x="+str(xValue-1)+" and x="+str(xValue+1)+" there is a relative min!")
+            maxMin=xValue
         if derSlope3<0 and derSlope==0 and derSlope2>0:
             print("there is a relative min at x="+str(xValue))
+            maxMin=xValue
         if derSlope3>0 and derSlope==0 and derSlope2<0:
             print("there is a relative max at x="+str(xValue))
+            maxMin=xValue
         xValue+=1
+
+xValue=reSet
+nDer()
+if derSlope>0:
+    print("between x="+str(xValue)+"and x="+str(maxMin)+" it is concave up")
+    xValue=maxMin
+    nDer()
+    if derSlope<0:
+        print("between x="+str(maxMin)+"and x="+str(xValue2)+" it is concave down")
+xValue=reSet
+nDer()
+if derSlope<0:
+    print("between x="+str(xValue)+"and x="+str(maxMin)+" it is concave down")
+    xValue=maxMin
+    nDer()
+    if derSlope>0:
+        print("between x="+str(maxMin)+"and x="+str(xValue2)+" it is up down")
 #this calculates the second derivative
 def secondDer():
     funcTion()#runs function(calculates y value)
@@ -353,10 +379,18 @@ xValue=reSet
 secondDer()
 if changeSlope>0:
     print("between x="+str(xValue)+"and x="+str(inflecTion)+" it is concave up")
-    print("between x="+str(inflecTion)+"and x="+str(xValue2)+" it is concave down")
+    xValue=inflecTion
+    secondDer()
+    if changeSlope<0:
+        print("between x="+str(inflecTion)+"and x="+str(xValue2)+" it is concave down")
+xValue=reSet
+secondDer()
 if changeSlope<0:
     print("between x="+str(xValue)+"and x="+str(inflecTion)+" it is concave down")
-    print("between x="+str(inflecTion)+"and x="+str(xValue2)+" it is concave up")
+    xValue=inflecTion
+    secondDer()
+    if changeSlope>0:
+        print("between x="+str(inflecTion)+"and x="+str(xValue2)+" it is concave up")
 """
 xValue=reSet
 xPoint = reSet
