@@ -178,7 +178,7 @@ def nDer2():
     
     for i in range(len(yFunction)):
         if yFunction[i] == "x":
-            yFunctionNewDer3 += str(xValue+.1+.001)
+            yFunctionNewDer3 += str(xValue+1+.001)
         else:
             yFunctionNewDer3 += yFunction[i]
     i += 1
@@ -189,7 +189,7 @@ def nDer2():
     
     for i in range(len(yFunction)):
         if yFunction[i] == "x":
-            yFunctionNewDer4 += str(xValue+.1-.001)
+            yFunctionNewDer4 += str(xValue+1-.001)
         else:
             yFunctionNewDer4 += yFunction[i]
     i += 1
@@ -205,7 +205,7 @@ def nDer3():
     
     for i in range(len(yFunction)):
         if yFunction[i] == "x":
-            yFunctionNewDer5 += str(xValue-.1+.001)
+            yFunctionNewDer5 += str(xValue-1+.001)
         else:
             yFunctionNewDer5 += yFunction[i]
     i += 1
@@ -216,7 +216,7 @@ def nDer3():
     
     for i in range(len(yFunction)):
         if yFunction[i] == "x":
-            yFunctionNewDer6 += str(xValue-.1-.001)
+            yFunctionNewDer6 += str(xValue-1-.001)
         else:
             yFunctionNewDer6 += yFunction[i]
     i += 1
@@ -251,9 +251,9 @@ for i in range(0, (abs(xValue)*accuracy+abs((xValue2)*accuracy)+1)):
         nDer2()#calculates derivative 1 after point
         nDer3()#calculates derivative 1 before point
         if derSlope>0 and derSlope2<0:
-            print("between x="+str(xValue-(1/accuracy))+" and x="+str(xValue+(1/accuracy))+" there is a relative max!")
+            print("between x="+str(xValue-1)+" and x="+str(xValue+1)+" there is a relative max!")
         if derSlope<0 and derSlope2>0:
-            print("between x="+str(xValue-(1/accuracy))+" and x="+str(xValue+(1/accuracy))+" there is a relative min!")
+            print("between x="+str(xValue-1)+" and x="+str(xValue+1)+" there is a relative min!")
         if derSlope3<0 and derSlope==0 and derSlope2>0:
             print("there is a relative min at x="+str(xValue))
         if derSlope3>0 and derSlope==0 and derSlope2<0:
@@ -261,13 +261,13 @@ for i in range(0, (abs(xValue)*accuracy+abs((xValue2)*accuracy)+1)):
         xValue+=1
 else:
     for i in range(xValue*accuracy, ((xValue2)*accuracy)+1):
-        nDer()
-        nDer2()
-        nDer3()
+        nDer()#calculates derivative at point
+        nDer2()#calculates derivative 1 after point
+        nDer3()#calculates derivative 1 before point
         if derSlope>0 and derSlope2<0:
-            print("between x="+str(xValue-(1/accuracy))+" and x="+str(xValue+(1/accuracy))+" there is a relative max!")
+            print("between x="+str(xValue-1)+" and x="+str(xValue+1)+" there is a relative max!")
         if derSlope<0 and derSlope2>0:
-            print("between x="+str(xValue-(1/accuracy))+" and x="+str(xValue+(1/accuracy))+" there is a relative min!")
+            print("between x="+str(xValue-1)+" and x="+str(xValue+1)+" there is a relative min!")
         if derSlope3<0 and derSlope==0 and derSlope2>0:
             print("there is a relative min at x="+str(xValue))
         if derSlope3>0 and derSlope==0 and derSlope2<0:
@@ -348,23 +348,6 @@ else:
             print("there is an inflection point at x="+str(xValue))
             inflecTion=xValue
         xValue+=1
-"""
-xValue=reSet#this resests xValue
-secondDer()#this runs the second derivative at the original point(sart of interval)
-if changeSlope>0:
-    print("concave up on the interval: ["+str(reSet)+","+str(inflecTion)+"]")
-    xValue=inflecTion+1
-    secondDer()
-    if changeSlope<0:
-        print("concave down on the interval: ["+str(inflecTion)+","+str(xValue2)+"]")
-xValue=reSet
-secondDer()
-if changeSlope<0:
-    print("concave down on the interval: ["+str(reSet)+","+str(inflecTion)+"]")
-    xValue=inflecTion+1
-    secondDer()
-    if changeSlope>0:
-        print("concave up on the interval: ["+str(inflecTion)+","+str(xValue2)+"]")
 
 xValue=reSet
 xPoint = reSet
@@ -382,7 +365,6 @@ if xValue < 0 and xValue2 > 0:
         nDer2()
         nDer3()
         #print(derSlope)
-        
         if derSlope > 0 and increasing == 3333:
             increasing = xPoint
         if derSlope < 0 and decreasing == 2222:
@@ -406,15 +388,18 @@ if xValue < 0 and xValue2 > 0:
            
         if derSlope3<0 and derSlope2 >0 and derSlope == 0: #min
            decreasingList.extend([decreasing, decreasing2])
-           print(decreasingList)    
+    
         
         xPoint += (1/accuracy) 
         xValue += (1/accuracy)
-        
-    if decreasing != 2222:
-        print("function is increasing between x=" + str(increasing) + " and x=" + str(increasing2))
+       
     if increasing != 3333:
-        print("function is decreasing between x=" + str(decreasing) + " and x=" + str(decreasing2)) 
+        print("function is increasing between x= " + increasingList[0] + " and x= " + increasingList[1])
+    if increasingList [3] != []:
+        print("function is increasing between x= " + increasingList[0] +  " and x= " + increasingList[1])
+    if decreasing != 2222:
+        print("function is decreasing between x= " + str(decreasing) + " and x= " + str(decreasing2)) 
+        
            
 else:    
     for i in range(xValue*accuracy, ((xValue2)*accuracy)+1):
@@ -451,8 +436,3 @@ else:
         
         xPoint += (1/accuracy) 
         xValue += (1/accuracy)
-    if decreasing != 2222:
-        print("function is increasing between x=" + str(increasing) + " and x=" + str(increasing2))
-    if increasing != 3333:
-        print("function is decreasing between x=" + str(decreasing) + " and x=" + str(decreasing2)) 
-"""
