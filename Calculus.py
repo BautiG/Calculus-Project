@@ -286,19 +286,19 @@ else:
 xValue=reSet
 nDer()
 if derSlope>0:
-    print("between x="+str(xValue)+"and x="+str(maxMin)+" it is concave up")
+    print("between x="+str(xValue)+"and x="+str(maxMin)+" it is increasing")
     xValue=maxMin
     nDer()
     if derSlope<0:
-        print("between x="+str(maxMin)+"and x="+str(xValue2)+" it is concave down")
+        print("between x="+str(maxMin)+"and x="+str(xValue2)+" it is decreasing")
 xValue=reSet
 nDer()
 if derSlope<0:
-    print("between x="+str(xValue)+"and x="+str(maxMin)+" it is concave down")
+    print("between x="+str(xValue)+"and x="+str(maxMin)+" it is decreasing")
     xValue=maxMin
     nDer()
     if derSlope>0:
-        print("between x="+str(maxMin)+"and x="+str(xValue2)+" it is up down")
+        print("between x="+str(maxMin)+"and x="+str(xValue2)+" it is increasing")
 #this calculates the second derivative
 def secondDer():
     funcTion()#runs function(calculates y value)
@@ -344,10 +344,10 @@ for i in range(0, (abs(xValue)*accuracy+abs((xValue2)*accuracy)+1)):
         secondDer2()#this runs second derivative for x+1
         secondDer3()#this runs second derivative for x-1
         if changeSlope>0 and changeSlope2<0:#chekcs range of inflection
-            print("between x="+str(xValue-(1/accuracy))+" and x="+str(xValue+(1/accuracy))+" there is a infelction point!")
+            print("between x="+str(xValue-(1/accuracy))+" and x="+str(xValue+1)+" there is a infelction point!")
             inflecTion=xValue
         if changeSlope<0 and changeSlope2>0:#chekcs range of inflection
-            print("between x="+str(xValue-(1/accuracy))+" and x="+str(xValue+(1/accuracy))+" there is a infelction point!")
+            print("between x="+str(xValue-(1/accuracy))+" and x="+str(xValue+1)+" there is a infelction point!")
             inflecTion=xValue
         if changeSlope3<0 and changeSlope==0 and changeSlope2>0:#checks if its an inflection point
             print("there is an inflection point at x="+str(xValue))
@@ -362,10 +362,10 @@ else:
         secondDer2()#this runs second derivative for x+1
         secondDer3()#this runs second derivative for x-1
         if changeSlope>0 and changeSlope2<0:#chekcs range of inflection
-            print("between x="+str(xValue-(1/accuracy))+" and x="+str(xValue+(1/accuracy))+" there is a infelction point!")
+            print("between x="+str(xValue-(1/accuracy))+" and x="+str(xValue+1)+" there is a infelction point!")
             inflecTion=xValue
         if changeSlope<0 and changeSlope2>0:#chekcs range of inflection
-            print("between x="+str(xValue-(1/accuracy))+" and x="+str(xValue+(1/accuracy))+" there is a infelction point!")
+            print("between x="+str(xValue-(1/accuracy))+" and x="+str(xValue+1)+" there is a infelction point!")
             inflecTion=xValue
         if changeSlope3<0 and changeSlope==0 and changeSlope2>0:#checks if its an inflection point
             print("there is an inflection point at x="+str(xValue))
@@ -379,7 +379,7 @@ xValue=reSet
 secondDer()
 if changeSlope>0:
     print("between x="+str(xValue)+"and x="+str(inflecTion)+" it is concave up")
-    xValue=inflecTion
+    xValue=inflecTion+1
     secondDer()
     if changeSlope<0:
         print("between x="+str(inflecTion)+"and x="+str(xValue2)+" it is concave down")
@@ -387,64 +387,7 @@ xValue=reSet
 secondDer()
 if changeSlope<0:
     print("between x="+str(xValue)+"and x="+str(inflecTion)+" it is concave down")
-    xValue=inflecTion
+    xValue=inflecTion+1
     secondDer()
     if changeSlope>0:
         print("between x="+str(inflecTion)+"and x="+str(xValue2)+" it is concave up")
-"""
-xValue=reSet
-xPoint = reSet
-increasing = 3333 #random number, not likely to come out as slope
-increasing2 = 0
-decreasing = 2222
-decreasing2 = 0
-slopePositive = 0 #1 means positive, 2 means negative
-increasingList = []
-decreasingList = []
-
-if xValue < 0 and xValue2 > 0:
-    for i in range(0, (abs(xValue)*accuracy+abs((xValue2)*accuracy)+1)):
-        nDer()
-        nDer2()
-        nDer3()
-        #print(derSlope)
-        if derSlope > 0 and increasing == xValue2:
-            increasing = xPoint
-        if derSlope < 0 and decreasing == xValue2:
-            decreasing = xPoint
-        if derSlope>0:
-            slopePositive = 1
-            increasing2 = xPoint
-        if derSlope<0:
-            slopePositive = 2
-            decreasing2 = xPoint
-        if derSlope == 0 and slopePositive == 1:
-            increasing2 = xPoint
-            decreasing = xPoint
-        if derSlope == 0 and slopePositive == 2:
-            decreasing2 = xPoint
-            increasing = xPoint
-        if derSlope3>0 and derSlope2 <0 and derSlope == 0: #max
-           increasingList.extend([increasing, increasing2])
-           print(increasingList)
-           increasing=reSet
-           
-        if derSlope3<0 and derSlope2 >0 and derSlope == 0: #min
-           decreasingList.extend([decreasing, decreasing2])
-    
-        
-        xPoint += (1/accuracy) 
-        xValue += (1/accuracy)
-       
-    if increasing != 3333:
-        print("function is increasing between x= " + increasingList[0] + " and x= " + increasingList[1])
-    if increasingList [3] != []:
-        print("function is increasing between x= " + increasingList[0] +  " and x= " + increasingList[1])
-    if decreasing != 2222:
-        print("function is decreasing between x= " + str(decreasing) + " and x= " + str(decreasing2)) 
-        
-           
-else:    
-    for i in range(xValue*accuracy, ((xValue2)*accuracy)+1):
-        print("hi")
-"""
