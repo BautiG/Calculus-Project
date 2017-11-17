@@ -1,4 +1,23 @@
 """
+welcome to our program! Billy and I basically made a program that calculates a bunch of different things
+about a function that the user gives the program. Just remember to use the proper python syntax.
+and from this point on, anything in a "#" or in between "" is commentary on how the program works.
+Make sure that when running the program you give only the accuracy you want and the range you want.
+Do not make these numbers too big as this will cause the program to take a long time calculating and
+might cause the results to be inaccurate do to our numerical (rather than algebraic) calculations.
+"""
+"""
+so right here I am going to explain all of the limitations of our program. First off, for trigonometry,
+our program can find alot of these things for a trig function, but the probelm is the computing power is not
+enough to be supper accurate on a chrome book due to the fact that the x axis is in terms of pi.
+Also, it only does increasing/decreasing for 1 relative max/min. This is because the programing for
+doing them indefinitely is incredibly difficult and we could not figure out how to do it. The same
+applies for the concavity range. Another major limitation of the program is that the relative maxes and mins
+(if they do not fall directly on an integer) will be given in a range of +/-1. This is because
+the loops can't run for nubmers that are more accurate than that due to the nature of how
+for loops are programed. Given these limitations, it's a pretty good program. It does a lot of stuff.
+"""
+"""
 welcom to our program! Billy and I bascially made a program that calculates a bunch of different things
 about a function that the user gives the program. Just remember to use the proper python syntax.
 and from this point on, anything in a "#" or in between "" is comentary on how the program works.
@@ -283,22 +302,22 @@ else:
             maxMin=xValue
         xValue+=1
 
-xValue=reSet
-nDer()
-if derSlope>0:
-    print("between x="+str(xValue)+"and x="+str(maxMin)+" it is increasing")
-    xValue=maxMin+.1
-    nDer()
+xValue=reSet#rests xValue
+nDer()#runs derivative at original x
+if derSlope>0:#checks for increasing/decreasing at start of interval
+    print("between x="+str(xValue)+"and x="+str(maxMin)+" it is increasing")#this prints first interval
+    xValue=maxMin+.1 #this sets the value of xValue to .1 after the min
+    nDer()#this calculates derivative .1 after the min
     if derSlope<0:
-        print("between x="+str(maxMin)+"and x="+str(xValue2)+" it is decreasing")
-xValue=reSet
-nDer()
-if derSlope<0:
-    print("between x="+str(xValue)+"and x="+str(maxMin)+" it is decreasing")
-    xValue=maxMin+.1
-    nDer()
+        print("between x="+str(maxMin)+"and x="+str(xValue2)+" it is decreasing")#this prints second interval
+xValue=reSet#resets xValue
+nDer()#runs derivative at original x
+if derSlope<0:#checks for increasing/decreasing at start of interval
+    print("between x="+str(xValue)+"and x="+str(maxMin)+" it is decreasing")#this prints first interval
+    xValue=maxMin+.1#this sets the value of xValue to .1 after the max
+    nDer()#this calculates derivative .1 after the max
     if derSlope>0:
-        print("between x="+str(maxMin)+"and x="+str(xValue2)+" it is increasing")
+        print("between x="+str(maxMin)+"and x="+str(xValue2)+" it is increasing")#this prints second interval
 #this calculates the second derivative
 def secondDer():
     funcTion()#runs function(calculates y value)
@@ -375,17 +394,17 @@ else:
             inflecTion=xValue
         xValue+=1
 
-xValue=reSet
-secondDer()
-if changeSlope>0:
-    print("between x="+str(xValue)+"and x="+str(inflecTion)+" it is concave up")
+xValue=reSet#this resets xValue
+secondDer()#runs second derivatinve at start of interval
+if changeSlope>0:#checks for concave up/down at start of interval
+    print("between x="+str(xValue)+"and x="+str(inflecTion)+" it is concave up")#prints first interval
     xValue=inflecTion+.1
     secondDer()
     if changeSlope<0:
-        print("between x="+str(inflecTion)+"and x="+str(xValue2)+" it is concave down")
-xValue=reSet
-secondDer()
-if changeSlope<0:
+        print("between x="+str(inflecTion)+"and x="+str(xValue2)+" it is concave down")#prints second interval
+xValue=reSet#this resets xValue
+secondDer()#runs second derivatinve at start of interval
+if changeSlope<0:#checks for concave up/down at start of interval
     print("between x="+str(xValue)+"and x="+str(inflecTion)+" it is concave down")
     xValue=inflecTion+.1
     secondDer()
