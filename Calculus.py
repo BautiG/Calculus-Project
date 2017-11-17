@@ -287,7 +287,7 @@ xValue=reSet
 nDer()
 if derSlope>0:
     print("between x="+str(xValue)+"and x="+str(maxMin)+" it is increasing")
-    xValue=maxMin
+    xValue=maxMin+1
     nDer()
     if derSlope<0:
         print("between x="+str(maxMin)+"and x="+str(xValue2)+" it is decreasing")
@@ -295,7 +295,7 @@ xValue=reSet
 nDer()
 if derSlope<0:
     print("between x="+str(xValue)+"and x="+str(maxMin)+" it is decreasing")
-    xValue=maxMin
+    xValue=maxMin+1
     nDer()
     if derSlope>0:
         print("between x="+str(maxMin)+"and x="+str(xValue2)+" it is increasing")
