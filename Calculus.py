@@ -247,18 +247,18 @@ it will say that there is a min/max at that point. But if there is no zero, only
 range in which the min/max can be found.
 """
 for i in range(0, (abs(xValue)*accuracy+abs((xValue2)*accuracy)+1)):
-         nDer()#calculates derivative at point
-         nDer2()#calculates derivative 1 after point
-         nDer3()#calculates derivative 1 before point
-         if derSlope>0 and derSlope2<0:
-             print("between x="+str(xValue-(1/accuracy))+" and x="+str(xValue+(1/accuracy))+" there is a relative max!")
-         if derSlope<0 and derSlope2>0:
-             print("between x="+str(xValue-(1/accuracy))+" and x="+str(xValue+(1/accuracy))+" there is a relative min!")
-         if derSlope3<0 and derSlope==0 and derSlope2>0:
-             print("there is a relative min at x="+str(xValue))
-         if derSlope3>0 and derSlope==0 and derSlope2<0:
-             print("there is a relative max at x="+str(xValue))
-         xValue+=(1/accuracy)
+        nDer()#calculates derivative at point
+        nDer2()#calculates derivative 1 after point
+        nDer3()#calculates derivative 1 before point
+        if derSlope>0 and derSlope2<0:
+            print("between x="+str(xValue-(1/accuracy))+" and x="+str(xValue+(1/accuracy))+" there is a relative max!")
+        if derSlope<0 and derSlope2>0:
+            print("between x="+str(xValue-(1/accuracy))+" and x="+str(xValue+(1/accuracy))+" there is a relative min!")
+        if derSlope3<0 and derSlope==0 and derSlope2>0:
+            print("there is a relative min at x="+str(xValue))
+        if derSlope3>0 and derSlope==0 and derSlope2<0:
+            print("there is a relative max at x="+str(xValue))
+        xValue+=(1/accuracy)
 else:
     for i in range(xValue*accuracy, ((xValue2)*accuracy)+1):
         nDer()
