@@ -365,20 +365,20 @@ if xValue < 0 and xValue2 > 0:
         nDer2()
         nDer3()
         #print(derSlope)
-        if derSlope > 0 and increasing == 3333:
+        if derSlope > 0 and increasing == xValue2:
             increasing = xPoint
-        if derSlope < 0 and decreasing == 2222:
+        if derSlope < 0 and decreasing == xValue2:
             decreasing = xPoint
-        elif derSlope>0:
+        if derSlope>0:
             slopePositive = 1
             increasing2 = xPoint
-        elif derSlope<0:
+        if derSlope<0:
             slopePositive = 2
             decreasing2 = xPoint
-        elif derSlope == 0 and slopePositive == 1:
+        if derSlope == 0 and slopePositive == 1:
             increasing2 = xPoint
             decreasing = xPoint
-        elif derSlope == 0 and slopePositive == 2:
+        if derSlope == 0 and slopePositive == 2:
             decreasing2 = xPoint
             increasing = xPoint
         if derSlope3>0 and derSlope2 <0 and derSlope == 0: #max
@@ -403,36 +403,4 @@ if xValue < 0 and xValue2 > 0:
            
 else:    
     for i in range(xValue*accuracy, ((xValue2)*accuracy)+1):
-        nDer()
-        nDer2()
-        nDer3()
-        #print(derSlope)
-        
-        if derSlope > 0 and increasing == 3333:
-            increasing = xPoint
-        if derSlope < 0 and decreasing == 2222:
-            decreasing = xPoint
-        elif derSlope>0:
-            slopePositive = 1
-            increasing2 = xPoint
-        elif derSlope<0:
-            slopePositive = 2
-            decreasing2 = xPoint
-        elif derSlope == 0 and slopePositive == 1:
-            increasing2 = xPoint
-            decreasing = xPoint
-        elif derSlope == 0 and slopePositive == 2:
-            decreasing2 = xPoint
-            increasing = xPoint
-        elif derSlope3>0 and derSlope2 <0 and derSlope == 0: #max
-           increasingList.extend(increasing, increasing2)
-           print(increasingList)
-        elif derSlope3<0 and derSlope2 >0 and derSlope == 0: #min
-           decreasingList.extend(decreasing, decreasing2)
-           print(decreasingList)
-            
-            
-            
-        
-        xPoint += (1/accuracy) 
-        xValue += (1/accuracy)
+        print("hi")
