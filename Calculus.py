@@ -72,6 +72,10 @@ bottom is exactly identical.
 if xValue<0 and xValue2>0:
     for i in range(0, (abs(xValue)*accuracy+abs((xValue2)*accuracy)+1)):
         funcTion()#this runs function
+        if eval(yFunctionNew)<0 and eval(yFunctionNew2)>0:
+            print("if there is no discontinuity, there is a zero between x="+str(xValue)+"and x="+str(xValue+1))
+        if eval(yFunctionNew)>0 and eval(yFunctionNew2)<0:
+            print("if there is no discontinuity, there is a zero between x="+str(xValue)+"and x="+str(xValue+1))
         if eval(yFunctionNew)==0:
             print("there is a zero at x="+str(xValue))#this prints the function
         xValue+=1
@@ -309,17 +313,17 @@ for i in range(0, (abs(xValue)*accuracy+abs((xValue2)*accuracy)+1)):
         secondDer()#this runs second derivative
         secondDer2()#this runs second derivative for x+1
         secondDer3()#this runs second derivative for x-1
-        if changeSlope>=0 and changeSlope2<=0:#chekcs range of inflection
+        if changeSlope>0 and changeSlope2<0:#chekcs range of inflection
             print("between x="+str(xValue-(1/accuracy))+" and x="+str(xValue+(1/accuracy))+" there is a infelction point!")
             inflecTion=xValue
-        if changeSlope<=0 and changeSlope2>=0:#chekcs range of inflection
+        if changeSlope<0 and changeSlope2>0:#chekcs range of inflection
             print("between x="+str(xValue-(1/accuracy))+" and x="+str(xValue+(1/accuracy))+" there is a infelction point!")
             inflecTion=xValue
         if changeSlope3<0 and changeSlope==0 and changeSlope2>0:#checks if its an inflection point
-            print("there is an inflection point at x="+str(derSlope))
+            print("there is an inflection point at x="+str(xValue))
             inflecTion=xValue
         if changeSlope3>0 and changeSlope==0 and changeSlope2<0:#checks if its an inflection point
-            print("there is an inflection point at x="+str(derSlope))
+            print("there is an inflection point at x="+str(xValue))
             inflecTion=xValue
         xValue+=1
 else:
@@ -334,10 +338,10 @@ else:
             print("between x="+str(xValue-(1/accuracy))+" and x="+str(xValue+(1/accuracy))+" there is a infelction point!")
             inflecTion=xValue
         if changeSlope3<0 and changeSlope==0 and changeSlope2>0:
-            print("there is an inflection point at x="+str(derSlope))
+            print("there is an inflection point at x="+str(xValue))
             inflecTion=xValue
         if changeSlope3>0 and changeSlope==0 and changeSlope2<0:
-            print("there is an inflection point at x="+str(derSlope))
+            print("there is an inflection point at x="+str(xValue))
             inflecTion=xValue
         xValue+=1
 
