@@ -78,13 +78,17 @@ if xValue<0 and xValue2>0:
             print("if there is no discontinuity, there is a zero between x="+str(xValue)+"and x="+str(xValue+1))
         if eval(yFunctionNew)==0:#if y value=0 then say there is a 0 at that xValue
             print("there is a zero at x="+str(xValue))#this prints the function
-        xValue+=1
+        xValue+=(1/accuracy)
 else:
     for i in range(xValue*accuracy, ((xValue2)*accuracy)+1):
-        funcTion()
-        if eval(yFunctionNew)==0:
-            print("there is a zero at x="+str(xValue))
-        xValue+=1
+        funcTion()#this runs function
+        if eval(yFunctionNew)<0 and eval(yFunctionNew2)>0:#this checks if there is a sign change(doesn't guarantee a 0)
+            print("if there is no discontinuity, there is a zero between x="+str(xValue)+"and x="+str(xValue+1))
+        if eval(yFunctionNew)>0 and eval(yFunctionNew2)<0:#this checks if there is a sign change(doesn't guarantee a 0)
+            print("if there is no discontinuity, there is a zero between x="+str(xValue)+"and x="+str(xValue+1))
+        if eval(yFunctionNew)==0:#if y value=0 then say there is a 0 at that xValue
+            print("there is a zero at x="+str(xValue))#this prints the function
+        xValue+=(1/accuracy)
 
 
 maxXvalue = 0  #this just establishes a veriable
